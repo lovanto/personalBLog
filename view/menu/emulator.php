@@ -2,9 +2,10 @@
 $sql = mysqli_query($Open, "SELECT * FROM post WHERE id_category = 3");
 while ($data = mysqli_fetch_array($sql)) {
 	?>
-	<div class="content">
-		<img class="card" src="<?=$data['image_post']?>" width="350px">
-		<h4><?=$data['title_post']?>
+	<a href="index.php?page=<?=$data['title_post']?>">
+		<div class="content border zoom blackFont marginsBottom">
+			<img src="<?=$data['image_post']?>" width="350px">
+			<h4><?=$data['title_post']?>
 		</h4>
 		<div class="marginsTop">
 			<?php
@@ -29,6 +30,10 @@ while ($data = mysqli_fetch_array($sql)) {
 			?>
 		</div>
 	</div>
-	<?php
+</a>
+<?php
 }
 ?>
+<div align="center">
+	Paging
+</div>
