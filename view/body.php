@@ -10,60 +10,66 @@
 					case 'tutorial': include 'menu/tutorial.php'; break;
 					case 'emulator': include 'menu/emulator.php'; break;
 					case 'about': include 'menu/about.php'; break;
-					case '$page': include 'menu/post.php'; break;
 					case 'main': 
 					default : include 'menu/home.php';
+					case $page: include 'menu/post.php'; break;
 				}
 				?>
 			</div>
 		</div>
 		<div class="col-sm marginAll">
+			<!-- SEARCH -->
 			<div class="border background text-center">
 				<div class="right">
-					<form action="" method="GET">
+					<form action="index.php?page=home" method="GET">
 						<input class="form-control minFont" type="text" name="search" id="search" placeholder="Pencarian">
-						<input class="btn btn-primary marginsTop buttonFont minFont right" type="submit" name="search" value="Cari" id="search" style="width: 80px;">
+						<input class="btn btn-primary marginsTop buttonFont minFont right" type="submit" value="Cari" style="width: 80px;">
 					</form>
 				</div>
 			</div>
+
+			<!-- POPULER -->
 			<div class="border background text-center marginsTop">
 				<div class="boldFont">
 					Populer
 					<hr>
 				</div>
 				<?php
-$sql = mysqli_query($Open, "SELECT * FROM post ORDER BY hit DESC LIMIT 0, 5"); //start from, until n
-while ($data = mysqli_fetch_array($sql)) {
-	?>
-	<a href="index.php?page=<?=$data['title_post']?>">
-		<div class="content border zoom blackFont marginsBottom boldFont populerFontSize center">
-			<img src="<?=$data['image_post']?>" width="120px">
-			<div><?=$data['title_post']?></div>
-		</div>
-	</a>
-	<?php
-}
-?>
-</div>
-<div class="border background text-center marginsTop">
-	<div class="boldFont">
-		Mungkin Anda Sukai
-		<hr>
-	</div>
-	<?php
-	$sql = mysqli_query($Open, "SELECT * FROM post ORDER BY RAND() LIMIT 3");
-	while ($data = mysqli_fetch_array($sql)) {
-		?>
-		<a href="index.php?page=<?=$data['title_post']?>">
-			<div class="content border zoom blackFont marginsBottom boldFont populerFontSize center">
-				<img src="<?=$data['image_post']?>" width="120px">
-				<div><?=$data['title_post']?></div>
+				$sql = mysqli_query($Open, "SELECT * FROM post ORDER BY hit DESC LIMIT 0, 5"); 
+				//start from, until n
+				while ($data = mysqli_fetch_array($sql)) {
+					?>
+					<a href="index.php?page=<?=$data['title_post']?>">
+						<div class="content border zoom blackFont marginsBottom boldFont populerFontSize center">
+							<img src="<?=$data['image_post']?>" width="120px">
+							<div><?=$data['title_post']?></div>
+						</div>
+					</a>
+					<?php
+				}
+				?>
 			</div>
-		</a>
-		<?php
-	}
-	?>
-</div>
-</div>
-</div>
+
+			<!-- SARAN -->
+			<div class="border background text-center marginsTop">
+				<div class="boldFont">
+					Mungkin Anda Sukai
+					<hr>
+				</div>
+				<?php
+				$sql = mysqli_query($Open, "SELECT * FROM post ORDER BY RAND() LIMIT 3");
+				while ($data = mysqli_fetch_array($sql)) {
+					?>
+					<a href="index.php?page=<?=$data['title_post']?>">
+						<div class="content border zoom blackFont marginsBottom boldFont populerFontSize center">
+							<img src="<?=$data['image_post']?>" width="120px">
+							<div><?=$data['title_post']?></div>
+						</div>
+					</a>
+					<?php
+				}
+				?>
+			</div>
+		</div>
+	</div>
 </div>

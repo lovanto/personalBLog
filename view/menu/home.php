@@ -1,5 +1,20 @@
 <?php
-$sql = mysqli_query($Open, "SELECT * FROM post");
+
+$halaman = 5;
+$page = isset($_GET['pageNumber'])? (int)$_GET["pageNumber"]:1;
+$mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
+
+if(isset($_GET['search'])){
+	$search = $_GET['search'];
+	$sql = mysqli_query($Open, "SELECT * FROM post LIMIT $mulai, $halaman WHERE title_post LIKE '%".$search."%'");				
+}else{
+	$sql = mysqli_query($Open, "SELECT * FROM post LIMIT $mulai, $halaman");
+	$query = mysqli_query($Open, "SELECT * FROM post");		
+}
+
+$total = mysqli_num_rows($query);
+$pages = ceil($total/$halaman); 
+
 while ($data = mysqli_fetch_array($sql)) {
 	?>
 	<a href="index.php?page=<?=$data['title_post']?>">
@@ -34,6 +49,26 @@ while ($data = mysqli_fetch_array($sql)) {
 <?php
 }
 ?>
-<div align="center">
-	Paging
+<div align="center">	
+	<nav aria-label="...">
+		<ul class="pagination justify-content-center">
+			<?php 
+			$j = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : 1;
+			for ($i=1; $i<=$pages ; $i++){
+				?>
+				<li class="page-item
+				<?php
+				if ($j == $i){
+					echo "active";
+					}else{
+
+					}
+					?>
+					"><a class="page-link" href="?pageNumber=<?php echo $i;?>"><?php echo $i; $j = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : $i;?></a>
+				</li>
+				<?php 
+			} 
+			?>
+		</ul>
+	</nav>
 </div>
