@@ -12,7 +12,7 @@
 						case 'about': include 'menu/about.php'; break;
 						case '$page': include 'menu/post.php'; break;
 						case 'main': 
-						default : include 'menu/home.php';
+						default : include 'menu/home.php'; .
 				}
 				?>
 			</div>
