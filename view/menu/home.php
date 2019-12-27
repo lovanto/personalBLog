@@ -60,18 +60,26 @@ while ($data = mysqli_fetch_array($sql)) {
 	<nav aria-label="...">
 		<ul class="pagination justify-content-center">
 			<?php 
-			$j = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : 1;
-			for ($i=1; $i<=$pages; $i++){
+			$locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : 1;
+			for ($pagee=1; $pagee<=$pages; $pagee++){
 				?>
 				<li class="page-item
 				<?php
-				if ($j == $i){
+				if ($locPage == $pagee){
 					echo "active";
 					}else{
 
 					}
 					?>
-					"><a class="page-link" href="?search=<?=$search?>&pageNumber=<?php echo $i;?>"><?php echo $i; $j = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : $i;?></a>
+					"><a class="page-link" href="
+					<?php
+					if(isset($_GET['search'])){
+						echo "?search=$search&pageNumber=$pagee";
+					}else{
+						echo "?pageNumber=$pagee";
+					}
+					?>
+					"><?php echo $pagee; $locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : $pagee;?></a>
 				</li>
 				<?php 
 			} 
