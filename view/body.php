@@ -18,77 +18,11 @@
 			</div>
 		</div>
 		<div class="col-sm marginAll">
-			<!-- SEARCH -->
-			<!-- <div class="border background text-center">
-				<div class="right">
-					<form action="index.php" method="GET">
-						<input class="form-control minFont" type="text" name="search" id="search" placeholder="Pencarian">
-						<input class="btn btn-primary marginsTop buttonFont minFont right" type="submit" value="Cari" style="width: 80px;">
-					</form>
-				</div>
-			</div> -->
 			<?php
-			include 'menu/about.php';
+			include 'sideBar/search.php';
+			include 'sideBar/populer.php';
+			include 'sideBar/recommendation.php';
 			?>
-
-			<!-- POPULER -->
-			<div class="border background text-center marginsTop">
-				<div class="boldFont">
-					Populer
-					<hr>
-				</div>
-				<?php
-				$sql = mysqli_query($Open, "SELECT * FROM post ORDER BY hit DESC LIMIT 0, 3"); 
-				//start from, until n
-				while ($data = mysqli_fetch_array($sql)) {
-					?>
-					<a href="index.php?page=<?=$data['title_post']?>">
-						<div class="content border zoom blackFont marginsBottom boldFont populerFontSize center">
-							<img src="<?=$data['image_post']?>" width="150">
-							<div>
-								<?php
-								if (strlen($data['title_post']) > 35)  {
-									echo substr($data['title_post'],0,35)."&nbsp...";
-								}else{
-									echo $data['title_post'];
-								}
-								?>
-							</div>
-						</div>
-					</a>
-					<?php
-				}
-				?>
-			</div>
-
-			<!-- SARAN -->
-			<div class="border background text-center marginsTop">
-				<div class="boldFont">
-					Mungkin Anda Sukai
-					<hr>
-				</div>
-				<?php
-				$sql = mysqli_query($Open, "SELECT * FROM post ORDER BY RAND() LIMIT 3");
-				while ($data = mysqli_fetch_array($sql)) {
-					?>
-					<a href="index.php?page=<?=$data['title_post']?>">
-						<div class="content border zoom blackFont marginsBottom boldFont populerFontSize center">
-							<img src="<?=$data['image_post']?>" width="150">
-							<div>
-								<?php
-								if (strlen($data['title_post']) > 35)  {
-									echo substr($data['title_post'],0,35)."&nbsp...";
-								}else{
-									echo $data['title_post'];
-								}
-								?>
-							</div>
-						</div>
-					</a>
-					<?php
-				}
-				?>
-			</div>
 		</div>
 	</div>
 </div>
