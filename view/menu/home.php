@@ -65,7 +65,7 @@ while ($data = mysqli_fetch_array($sql)) {
 	<nav aria-label="...">
 		<ul class="pagination justify-content-center">
 			<!-- BUTTON FIRST PAGE -->
-				<li class="page-item border-right
+				<li class="page-item
 				<?php
 				if ($page == 1){
 					echo "active";
