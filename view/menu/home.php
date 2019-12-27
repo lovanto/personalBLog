@@ -8,8 +8,12 @@ if(isset($_GET['search'])){
 	$search = $_GET['search'];
 	$sql = mysqli_query($Open, "SELECT * FROM post WHERE title_post LIKE '%".$search."%' LIMIT $mulai, $halaman");
 	$query = mysqli_query($Open, "SELECT * FROM post WHERE title_post LIKE '%".$search."%'");
-	$total = mysqli_num_rows($query);	
-	echo $total;		
+	$total = mysqli_num_rows($query);
+	?>
+	<div>
+		Hasil Pencarian :
+	</div>
+	<?php
 }else{
 	$sql = mysqli_query($Open, "SELECT * FROM post ORDER BY id_post DESC LIMIT $mulai, $halaman");
 	$query = mysqli_query($Open, "SELECT * FROM post");
@@ -67,7 +71,7 @@ while ($data = mysqli_fetch_array($sql)) {
 
 					}
 					?>
-					"><a class="page-link" href="?pageNumber=<?php echo $i;?>"><?php echo $i; $j = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : $i;?></a>
+					"><a class="page-link" href="?search=<?=$search?>&pageNumber=<?php echo $i;?>"><?php echo $i; $j = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : $i;?></a>
 				</li>
 				<?php 
 			} 
