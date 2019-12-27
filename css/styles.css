@@ -70,6 +70,13 @@ a:hover{
   transform: scale(1.01);
 }
 
+.centerImage{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
 .hideme{
   opacity: 0;
 }
@@ -101,7 +108,7 @@ a:hover{
 }
 
 .populerFontSide{
-  font-size: 4px;
+  font-size: 1px;
 }
 
 .left{
