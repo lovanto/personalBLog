@@ -28,7 +28,7 @@
 				</div>
 			</div> -->
 			<?php
-			include 'footer.php';
+			include 'menu/about.php';
 			?>
 
 			<!-- POPULER -->
