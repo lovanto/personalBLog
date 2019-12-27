@@ -30,7 +30,7 @@ $pages = ceil($total/$halaman);
 while ($data = mysqli_fetch_array($sql)) {
 	?>
 	<a href="index.php?page=<?=$data['title_post']?>">
-		<div class="content border zoom blackFont marginsBottom">
+		<div class="content border zoom blackFont marginsBottom hideme">
 			<img src="<?=$data['image_post']?>" width="350px">
 			<h4><?=$data['title_post']?>
 		</h4>
@@ -65,70 +65,70 @@ while ($data = mysqli_fetch_array($sql)) {
 	<nav aria-label="...">
 		<ul class="pagination justify-content-center">
 			<!-- BUTTON FIRST PAGE -->
-				<li class="page-item
-				<?php
-				if ($page == 1){
-					echo "active";
-					}else{
+			<li class="page-item
+			<?php
+			if ($page == 1){
+				echo "active";
+				}else{
 
+				}
+				?>
+				"><a class="page-link" href="
+				<?php
+				if(isset($_GET['search'])){
+					echo "?search=$search&pageNumber=1";
+					}else{
+						echo "?pageNumber=1";
 					}
 					?>
-					"><a class="page-link" href="
-					<?php
-					if(isset($_GET['search'])){
-						echo "?search=$search&pageNumber=1";
-						}else{
-							echo "?pageNumber=1";
-						}
-						?>
-						">Pertama</a>
-					</li>
-			<?php 
-			$locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : 1;
+					">Pertama</a>
+				</li>
+				<?php 
+				$locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : 1;
 			// BUTTON PAGE NUMBER
-			for ($pagee=1; $pagee<=$pages; $pagee++){
-				?>
-				<li class="page-item
-				<?php
-				if ($locPage == $pagee){
-					echo "active";
-					}else{
-
-					}
+				for ($pagee=1; $pagee<=$pages; $pagee++){
 					?>
-					"><a class="page-link" href="
+					<li class="page-item
 					<?php
-					if(isset($_GET['search'])){
-						echo "?search=$search&pageNumber=$pagee";
+					if ($locPage == $pagee){
+						echo "active";
 						}else{
-							echo "?pageNumber=$pagee";
+
 						}
 						?>
-						"><?php echo $pagee; $locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : $pagee;?></a>
-					</li>
-					<?php 
-				} 
-				?>
-
-				<!-- BUTTON LAST PAGE -->
-				<li class="page-item
-				<?php
-				if ($page == $pages){
-					echo "active";
-					}else{
-
-					}
+						"><a class="page-link" href="
+						<?php
+						if(isset($_GET['search'])){
+							echo "?search=$search&pageNumber=$pagee";
+							}else{
+								echo "?pageNumber=$pagee";
+							}
+							?>
+							"><?php echo $pagee; $locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : $pagee;?></a>
+						</li>
+						<?php 
+					} 
 					?>
-					"><a class="page-link" href="
+
+					<!-- BUTTON LAST PAGE -->
+					<li class="page-item
 					<?php
-					if(isset($_GET['search'])){
-						echo "?search=$search&pageNumber=$pages";
+					if ($page == $pages){
+						echo "active";
 						}else{
-							echo "?pageNumber=$pages";
+
 						}
 						?>
-						">Terakhir</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
+						"><a class="page-link" href="
+						<?php
+						if(isset($_GET['search'])){
+							echo "?search=$search&pageNumber=$pages";
+							}else{
+								echo "?pageNumber=$pages";
+							}
+							?>
+							">Terakhir</a>
+						</li>
+					</ul>
+				</nav>
+			</div>

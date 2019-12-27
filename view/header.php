@@ -5,10 +5,10 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item text-center">
-				<a class="nav-link space" href="index.php?page=home"><img src="images/icon.png" width="20px"></a>
+				<a class="nav-link space" href="index.php"><img src="images/icon.png" width="20px"></a>
 			</li>
 			<li class="nav-item text-center boldText">
-				<a class="nav-link space" href="index.php?page=home">Beranda</a>
+				<a class="nav-link space" href="index.php">Beranda</a>
 			</li>
 			<li class="nav-item text-center boldText">
 				<a class="nav-link space" href="index.php?page=programming">Programming</a>
