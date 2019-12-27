@@ -64,6 +64,7 @@ while ($data = mysqli_fetch_array($sql)) {
 <div align="center">	
 	<nav aria-label="...">
 		<ul class="pagination justify-content-center">
+
 			<!-- BUTTON FIRST PAGE -->
 			<li class="page-item
 			<?php
@@ -83,52 +84,102 @@ while ($data = mysqli_fetch_array($sql)) {
 					?>
 					">Pertama</a>
 				</li>
-				<?php 
-				$locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : 1;
-			// BUTTON PAGE NUMBER
-				for ($pagee=1; $pagee<=$pages; $pagee++){
-					?>
-					<li class="page-item
-					<?php
-					if ($locPage == $pagee){
-						echo "active";
-						}else{
 
+				<!-- BUTTON PAGE BEFORE -->
+				<li class="page-item
+				<?php
+				$minusPage = $page-1;
+				if ($page == 1){
+					echo "disabled";
+					}else{
+
+					}
+					?>
+					"><a class="page-link" href="
+					<?php
+					if(isset($_GET['search'])){
+						echo "?search=$search&pageNumber=$minusPage";
+						}else{
+							echo "?pageNumber=$minusPage";
 						}
 						?>
-						"><a class="page-link" href="
-						<?php
-						if(isset($_GET['search'])){
-							echo "?search=$search&pageNumber=$pagee";
-							}else{
-								echo "?pageNumber=$pagee";
-							}
-							?>
-							"><?php echo $pagee; $locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : $pagee;?></a>
-						</li>
-						<?php 
-					} 
-					?>
+						"><<</a>
+					</li>
 
-					<!-- BUTTON LAST PAGE -->
-					<li class="page-item
-					<?php
-					if ($page == $pages){
-						echo "active";
-						}else{
+					<?php 
+					$locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : 1;
+					$minPage = $page;
+					$maxPage = 5+$page;
 
+					// BUTTON PAGE NUMBER
+					for ($pagee=$minPage; $pagee<=$maxPage; $pagee++){			
+						if ($maxPage > $pages) {
+							$maxPage = $pages;
+							$pagee = $pages-5;
 						}
 						?>
-						"><a class="page-link" href="
+						<li class="page-item
 						<?php
-						if(isset($_GET['search'])){
-							echo "?search=$search&pageNumber=$pages";
+						if ($locPage == $pagee){
+							echo "active";
 							}else{
-								echo "?pageNumber=$pages";
+
 							}
 							?>
-							">Terakhir</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
+							"><a class="page-link" href="
+							<?php
+							if(isset($_GET['search'])){
+								echo "?search=$search&pageNumber=$pagee";
+								}else{
+									echo "?pageNumber=$pagee";
+								}
+								?>
+								"><?php echo $pagee; $locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : $pagee;?></a>
+							</li>
+							<?php
+						} 
+						?>
+
+						<!-- BUTTON PAGE AFTER -->
+						<li class="page-item
+						<?php
+						$plusPage = $page+1;
+						if ($page == $pages){
+							echo "disabled";
+							}else{
+
+							}
+							?>
+							"><a class="page-link" href="
+							<?php
+							if(isset($_GET['search'])){
+								echo "?search=$search&pageNumber=$plusPage";
+								}else{
+									echo "?pageNumber=$plusPage";
+								}
+								?>
+								">>></a>
+							</li>
+
+							<!-- BUTTON LAST PAGE -->
+							<li class="page-item
+							<?php
+							if ($page == $pages){
+								echo "active";
+								}else{
+
+								}
+								?>
+								"><a class="page-link" href="
+								<?php
+								if(isset($_GET['search'])){
+									echo "?search=$search&pageNumber=$pages";
+									}else{
+										echo "?pageNumber=$pages";
+									}
+									?>
+									">Terakhir</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
