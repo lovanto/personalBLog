@@ -116,6 +116,9 @@ while ($data = mysqli_fetch_array($sql)) {
 						if ($maxPage > $pages) {
 							$maxPage = $pages;
 							$pagee = $pages-5;
+							if ($pagee <= 1) {
+								$pagee = 1;
+							}
 						}
 						?>
 						<li class="page-item
