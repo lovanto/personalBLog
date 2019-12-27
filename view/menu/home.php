@@ -10,17 +10,22 @@ if(isset($_GET['search'])){
 	$query = mysqli_query($Open, "SELECT * FROM post WHERE title_post LIKE '%".$search."%'");
 	$total = mysqli_num_rows($query);
 	?>
-	<div>
+	<div class="container boldFont marginsBottom">
 		Hasil Pencarian :
 	</div>
 	<?php
+	if ($total == 0) {
+		?>
+		<div class="container">Data tidak ditemukan...</div>
+		<?php
+	}
 }else{
 	$sql = mysqli_query($Open, "SELECT * FROM post ORDER BY id_post DESC LIMIT $mulai, $halaman");
 	$query = mysqli_query($Open, "SELECT * FROM post");
 	$total = mysqli_num_rows($query);
 }
 
-$pages = ceil($total/$halaman); 
+$pages = ceil($total/$halaman);
 
 while ($data = mysqli_fetch_array($sql)) {
 	?>
@@ -31,8 +36,8 @@ while ($data = mysqli_fetch_array($sql)) {
 		</h4>
 		<div class="marginsTop">
 			<?php
-			if (strlen($data['description_post']) > 300)  {
-				echo substr($data['description_post'],0,300)."...";
+			if (strlen($data['description_post']) > 245)  {
+				echo substr($data['description_post'],0,245)."...";
 			}else{
 				echo $data['description_post'];
 			}
@@ -59,8 +64,28 @@ while ($data = mysqli_fetch_array($sql)) {
 <div align="center">	
 	<nav aria-label="...">
 		<ul class="pagination justify-content-center">
+			<!-- BUTTON FIRST PAGE -->
+				<li class="page-item border-right
+				<?php
+				if ($page == 1){
+					echo "active";
+					}else{
+
+					}
+					?>
+					"><a class="page-link" href="
+					<?php
+					if(isset($_GET['search'])){
+						echo "?search=$search&pageNumber=1";
+						}else{
+							echo "?pageNumber=1";
+						}
+						?>
+						">Pertama</a>
+					</li>
 			<?php 
 			$locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : 1;
+			// BUTTON PAGE NUMBER
 			for ($pagee=1; $pagee<=$pages; $pagee++){
 				?>
 				<li class="page-item
@@ -75,15 +100,35 @@ while ($data = mysqli_fetch_array($sql)) {
 					<?php
 					if(isset($_GET['search'])){
 						echo "?search=$search&pageNumber=$pagee";
+						}else{
+							echo "?pageNumber=$pagee";
+						}
+						?>
+						"><?php echo $pagee; $locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : $pagee;?></a>
+					</li>
+					<?php 
+				} 
+				?>
+
+				<!-- BUTTON LAST PAGE -->
+				<li class="page-item
+				<?php
+				if ($page == $pages){
+					echo "active";
 					}else{
-						echo "?pageNumber=$pagee";
+
 					}
 					?>
-					"><?php echo $pagee; $locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : $pagee;?></a>
-				</li>
-				<?php 
-			} 
-			?>
-		</ul>
-	</nav>
-</div>
+					"><a class="page-link" href="
+					<?php
+					if(isset($_GET['search'])){
+						echo "?search=$search&pageNumber=$pages";
+						}else{
+							echo "?pageNumber=$pages";
+						}
+						?>
+						">Terakhir</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
