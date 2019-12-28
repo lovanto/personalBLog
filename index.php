@@ -14,7 +14,7 @@
 <body>
 
 	<?php 
-	include 'connLocal.php';
+	include 'conn.php';
 	include 'view/header.php';
 	include 'view/body.php';
 	include 'view/footer.php';
