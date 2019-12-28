@@ -3,7 +3,7 @@ if ($_POST['submit'] == "Daftar") {
 	$name_user = $_POST['name_user'];
 	$username_user = $_POST['username_user'];
 	$email_user = $_POST['email_user'];
-	$password_user = $_POST['password_user'];
+	$password_user = md5($_POST['password_user']);
 	$class = "User";
 
 	require_once '../conn.php';
@@ -17,6 +17,7 @@ if ($_POST['submit'] == "Daftar") {
 		</script>
 		<?php
 	}else{
+		echo("Error description: " . $Open -> error);
 		?>
 		<script language="JavaScript">
 			alert('Akun gagal dibuat.');
