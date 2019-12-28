@@ -9,6 +9,7 @@
 	<link href="css/bootstrap-4.0.0.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
 	<link href="css/modal.css" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
 	<link rel="icon" href="icon.ico" type="image/x-icon" />
 </head>
 <body>
