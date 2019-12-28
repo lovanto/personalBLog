@@ -132,3 +132,7 @@ a:hover{
   display: block;
   margin: 2px 0 0 0;
 }
+
+.blueImage:hover{ 
+  filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+}

@@ -8,12 +8,13 @@
 
 	<link href="css/bootstrap-4.0.0.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/modal.css" rel="stylesheet">
 	<link rel="icon" href="icon.ico" type="image/x-icon" />
 </head>
 <body>
 
 	<?php 
-	include 'conn.php';
+	include 'connLocal.php';
 	include 'view/header.php';
 	include 'view/body.php';
 	include 'view/footer.php';

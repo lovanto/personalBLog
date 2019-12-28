@@ -1,7 +1,7 @@
 <div class="jumbotron">
 	<div class="row">
 		<div class="col-md-8 marginAll">
-			<div class="border background container">
+			<div class="border background">
 				<?php
 				$page = (isset($_GET['page']))? $_GET['page'] : "main";
 				switch ($page) {
@@ -10,6 +10,7 @@
 					case 'tutorial': include 'menu/tutorial.php'; break;
 					case 'emulator': include 'menu/emulator.php'; break;
 					case 'about': include 'menu/about.php'; break;
+					case 'signup': include 'menu/signup.php'; break;
 					case 'main': 
 					default : include 'menu/home.php';
 					case $page: include 'menu/post.php'; break;
