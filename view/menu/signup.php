@@ -1,4 +1,4 @@
-<form action="../code/signup_proses.php" method="POST">
+<form action="code/signup_proses.php" method="POST">
 	<div class="container">
 		<div class="boldFont">Buat Akun Baru</div>
 		<hr>
@@ -35,7 +35,7 @@
 			</div>
 			<div class="container"><p id="validate-status"></p></div>
 		</div>
-		<div align="center"><input class="btn btn-primary col-md-2" type="submit" name="submit" value="Daftar"></div>
+		<div align="center"><input class="btn btn-primary col-md-2 disabled" type="submit" name="submit" id="submit" value="Daftar"></div>
 	</div>
 </form>
 
@@ -51,9 +51,11 @@
 
 		if(password_user == password_user_confirm) {  
 			$("#validate-status").text("").css('color', 'red');    
+			document.getElementById("submit").classList.remove('disabled'); 
 		}
 		else {
 			$("#validate-status").text("Password tidak sesuai").css('color', 'red');  
+			document.getElementById("submit").classList.add('disabled'); 
 		}
 	}
 
