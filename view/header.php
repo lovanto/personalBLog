@@ -27,7 +27,7 @@
 		if (empty($_SESSION['username'])){
 			?>
 			<div class="nav-item text-center boldText float-right">
-				<a class="nav-link space whiteFont" href="index.php?page=signup">Daftar</a>
+				<a class="nav-link whiteFont" href="index.php?page=signup">Daftar</a>
 			</div>
 			<div class="nav-item text-center boldText float-right">
 				<a class="nav-link space whiteFont" href="#login">Masuk</a>
