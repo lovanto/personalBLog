@@ -14,16 +14,15 @@
 				<div class="input-group-text">Username</div>
 			</div>
 			<input class="form-control" type="text" name="username_user" id="username_user" maxlength="20" required>
-			<div class="col-md-7"><p id="validate-status_username"></p></div>
+			<div class="col-md-5"><p id="validate-status_username"></p></div>
 		</div>
 
 		<div class="input-group marginsBottom col-md-7">
 			<div class="input-group-prepend">
 				<div class="input-group-text">Email</div>
 			</div>
-			<input class="form-control" type="email" name="email_user" maxlength="100" required>
+			<input class="form-control" type="email" name="email_user" id="email_user" maxlength="100" required>
 		</div>
-		<div class="container"><p id="validate-status_username"></p></div>
 
 		<div class="row col-sm">
 			<div class="input-group marginsBottom col-md-5">
@@ -52,7 +51,6 @@
 		$("#password_user").keyup(validate);
 		$("#password_user_confirm").keyup(validate);
 		$("#username_user").keyup(validate_user);
-		$("#email_user").keyup(validate_email);
 	});
 
 	function validate() {
@@ -66,6 +64,7 @@
 			if(password_user == password_user_confirm) {  
 				$("#validate-status").text("").css('color', 'red');    
 				document.getElementById("submit").classList.remove('disabled'); 
+				validate_user();
 			}
 			else {
 				$("#validate-status").text("Password tidak sesuai.").css('color', 'red');  

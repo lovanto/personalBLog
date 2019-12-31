@@ -1,6 +1,3 @@
-<script type="text/javascript">
-	document.getElementById("submit").classList.add('disabled'); 
-</script>
 <?php
 include '../conn.php';
 
