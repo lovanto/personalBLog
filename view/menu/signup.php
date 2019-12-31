@@ -9,13 +9,13 @@
 			<input class="form-control" type="text" name="name_user" maxlength="75" required>
 		</div>
 
-		<div class="input-group marginsBottom col-md-5">
+		<div class="input-group marginsBottom col-sm">
 			<div class="input-group-prepend">
 				<div class="input-group-text">Username</div>
 			</div>
 			<input class="form-control" type="text" name="username_user" id="username_user" maxlength="20" required>
+			<div class="col-md-7"><p id="validate-status_username"></p></div>
 		</div>
-		<div class="container"><p id="validate-status_username"></p></div>
 
 		<div class="input-group marginsBottom col-md-7">
 			<div class="input-group-prepend">
