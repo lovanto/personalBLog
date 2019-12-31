@@ -23,6 +23,7 @@
 			</div>
 			<input class="form-control" type="email" name="email_user" maxlength="100" required>
 		</div>
+		<div class="container"><p id="validate-status_username"></p></div>
 
 		<div class="row col-sm">
 			<div class="input-group marginsBottom col-md-5">
@@ -44,12 +45,14 @@
 		<div align="center"><input class="btn btn-primary col-md-2 disabled" type="submit" name="submit" id="submit" value="Daftar"></div>
 	</div>
 </form>
+<script type="text/javascript"></script>
 
 <script>
 	$(document).ready(function() {
 		$("#password_user").keyup(validate);
 		$("#password_user_confirm").keyup(validate);
 		$("#username_user").keyup(validate_user);
+		$("#email_user").keyup(validate_email);
 	});
 
 	function validate() {
@@ -79,8 +82,17 @@
 		var username_user = $("#username_user").val();
 
 		if (username_user.length <= 20 && username_user.length >= 8) {
-			$("#validate-status_username").text("").css('color', 'red');  
-			document.getElementById("submit").classList.remove('disabled'); 
+			$("#validate-status_username").text("").css('color', 'red'); 
+
+			if (username_user!='') {
+				$.post('code/check_user_exist.php', {username:username_user},
+
+					function(data) {
+						$('#validate-status_username').html(data);
+					})
+			}else{
+				$('#validate-status_username').html('');
+			}
 		} else {
 			$("#validate-status_username").text("Username minimal 8 karakter dan maksimal 20 karakter.").css('color', 'red');  
 			document.getElementById("submit").classList.add('disabled'); 
