@@ -16,10 +16,11 @@ session_start();
 	<script src="js/jquery.min.js"></script>
 	<link rel="icon" href="icon.ico" type="image/x-icon" />
 </head>
-<body>
+<body onload="setInterval('displayServerTime()', 1000);">
 
 	<?php 
 	include 'conn.php';
+	include 'code/clock.php';
 	include 'view/header.php';
 	include 'view/body.php';
 	include 'view/footer.php';

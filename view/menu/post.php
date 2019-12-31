@@ -10,8 +10,10 @@ while ($data = mysqli_fetch_array($sql)) {
 	?>
 	<div class="container">
 		<h3 class="marginsTop"><?=$data['title_post']?><br></h3>
-		<img class="marginsBottom marginsTop" src="<?=$data['image_post']?>" width="800"><br>
-		<div><?=$data['description_post']?><br></div>
+		<div class="col-sm" align="center">
+			<img class="marginsBottom marginsTop justify-content-center" src="<?=$data['image_post']?>" width="800">
+		</div>
+		<p><?=$data['description_post']?><br></p>
 		<div class="boldFont marginsTop">
 			<?php 
 			if ($data['id_category']==1) {
@@ -29,12 +31,5 @@ while ($data = mysqli_fetch_array($sql)) {
 	<hr>
 	<?php
 	include 'comment_user.php';
-	mysqli_query($Open ,"UPDATE post SET 
-		title_post='$title_post', 
-		image_post='$image_post', 
-		description_post=description_post, 
-		id_category=id_category, 
-		hit='$hit' 
-		WHERE id_post='$id_post'") 
-	or die(mysqli_error($Open));
+	include 'code/plus_hit.php';
 }
