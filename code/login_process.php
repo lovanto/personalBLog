@@ -19,11 +19,11 @@ if ($count > 0 ) {
 	session_start();
 	$_SESSION['username'] = $usernameUser;
 	$_SESSION['name'] = $nameUser;
-	$_SESSION['status'] = 'Login';
+	$_SESSION['status'] = 'login';
 
 	?>
 	<script language="JavaScript">
-		alert('Selamat datang <?=$_SESSION['username']?>.');
+		alert('Selamat datang <?=$_SESSION['name']?>.');
 		document.location='../';
 	</script>
 	<?php

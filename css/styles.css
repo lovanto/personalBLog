@@ -136,3 +136,7 @@ a:hover{
 .blueImage:hover{ 
   filter: sepia(100%) hue-rotate(190deg) saturate(500%);
 }
+
+.textUnResize{
+  resize: none;
+}
