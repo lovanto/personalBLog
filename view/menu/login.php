@@ -1,5 +1,5 @@
 <div>
-	<a href="code/login_process.php" title="Close" class="modal-close"><font size="5">&times;</font></a>
+	<a href="#" title="Close" class="modal-close"><font size="5">&times;</font></a>
 	<h1>Login</h1>
 	<hr>
 	<div>

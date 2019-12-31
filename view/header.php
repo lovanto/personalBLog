@@ -37,7 +37,7 @@
 			?>
 			<div class="nav-item text-center boldText float-right nav-link space whiteFont">
 				<?=$_SESSION['name']?>, 
-				<a href="logout.php"> Logout</a>
+				<a href="code/logout.php"> Logout</a>
 			</div>
 			<?php
 		}

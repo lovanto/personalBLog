@@ -27,5 +27,12 @@ if ($count > 0 ) {
 		document.location='../';
 	</script>
 	<?php
+}else{
+	?>
+	<script language="JavaScript">
+		alert('Username atau password anda salah. Silahkan coba lagi!');
+		document.location='../';
+	</script>
+	<?php
 }
 ?>
