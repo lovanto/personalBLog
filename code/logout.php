@@ -1,5 +1,7 @@
 <?php 
 session_start();
 session_destroy();
-header("location:../");
 ?>
+<script>
+window.history.back();
+</script>

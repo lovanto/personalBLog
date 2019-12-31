@@ -24,14 +24,14 @@ if ($count > 0 ) {
 	?>
 	<script language="JavaScript">
 		alert('Selamat datang <?=$_SESSION['name']?>.');
-		document.location='../';
+		window.history.go(-2);
 	</script>
 	<?php
 }else{
 	?>
 	<script language="JavaScript">
 		alert('Username atau password anda salah. Silahkan coba lagi!');
-		document.location='../';
+		window.history.go(-2);
 	</script>
 	<?php
 }

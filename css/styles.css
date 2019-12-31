@@ -8,6 +8,21 @@ a:hover{
   color: rgba(255, 255, 255, 1);
 }
 
+.link_item:hover{
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);  
+
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+}
+
 .boldText{
   margin-top: 3px;
   font-weight: 650;

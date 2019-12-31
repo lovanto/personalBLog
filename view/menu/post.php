@@ -8,8 +8,8 @@ while ($data = mysqli_fetch_array($sql)) {
 	$id_category = $data['id_category'];
 	$hit = $data['hit'] + 1;
 	?>
-	<div>
-		<div><?=$data['title_post']?><br></div>
+	<div class="container">
+		<h3 class="marginsTop"><?=$data['title_post']?><br></h3>
 		<img class="marginsBottom marginsTop" src="<?=$data['image_post']?>" width="800"><br>
 		<div><?=$data['description_post']?><br></div>
 		<div class="boldFont marginsTop">
@@ -26,33 +26,15 @@ while ($data = mysqli_fetch_array($sql)) {
 			?>
 		</div>
 	</div>
+	<hr>
 	<?php
-	if ($_SESSION['name'] != "") {
-		?>
-		<hr>
-		<div class="container marginsTop marginsBottom">
-			<div class="marginsBottom boldFont">Komentar:</div>
-			<textarea class="form-control textUnResize" rows="3"></textarea>
-		</div>
-		<hr>
-		<?php
-		$getComment = mysqli_query($Open, "SELECT * FROM comment_user WHERE id_post = '$id_post' ORDER BY id_comment DESC");
-		while ($resultComment = mysqli_fetch_array($getComment)) {
-			?>
-			<div class="container rounded border marginsBottom">
-			<div class="marginsTop boldFont"><?=$resultComment['name_user']?></div>
-			<div class="space marginsBottom marginsTop"><?=$resultComment['comment_content']?></div>
-			</div>
-			<?php
-		}
-
-		mysqli_query($Open ,"UPDATE post SET 
+	include 'comment_user.php';
+	mysqli_query($Open ,"UPDATE post SET 
 		title_post='$title_post', 
 		image_post='$image_post', 
 		description_post=description_post, 
 		id_category=id_category, 
 		hit='$hit' 
 		WHERE id_post='$id_post'") 
-		or die(mysqli_error($Open));
-	}
+	or die(mysqli_error($Open));
 }
