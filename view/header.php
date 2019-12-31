@@ -23,12 +23,25 @@
 				<a class="nav-link space" href="index.php?page=about">Tentang Saya</a>
 			</li>
 		</ul>
-		<div class="nav-item text-center boldText float-right">
-			<a class="nav-link space whiteFont" href="index.php?page=signup">Daftar</a>
-		</div>
-		<div class="nav-item text-center boldText float-right">
-			<a class="nav-link space whiteFont" href="#login">Masuk</a>
-		</div>
+		<?php
+		if (empty($_SESSION['username'])){
+			?>
+			<div class="nav-item text-center boldText float-right">
+				<a class="nav-link space whiteFont" href="index.php?page=signup">Daftar</a>
+			</div>
+			<div class="nav-item text-center boldText float-right">
+				<a class="nav-link space whiteFont" href="#login">Masuk</a>
+			</div>
+			<?php
+		}else{
+			?>
+			<div class="nav-item text-center boldText float-right nav-link space whiteFont">
+				<?=$_SESSION['name']?>, 
+				<a href="logout.php"> Logout</a>
+			</div>
+			<?php
+		}
+		?>
 	</div>
 </nav>
 
