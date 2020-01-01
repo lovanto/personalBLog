@@ -27,14 +27,12 @@ if ($count > 0 ) {
 	if ($_SESSION['class'] != "Admin") {
 	?>
 	<script language="JavaScript">
-		alert('Selamat datang <?=$_SESSION['name']?>.');
 		window.history.go(-2);
 	</script>
 	<?php
 	}else{
 		?>
 		<script language="JavaScript">
-		alert('Selamat datang <?=$_SESSION['name']?> si admin.');
 		document.location='../view/adminSide/homeAdmin.php';
 	</script>
 	<?php
