@@ -18,6 +18,6 @@
 	</ul>
 	<div class="nav-item text-center boldText nav-link space whiteFont float-right" align="right">
 		<?=$_SESSION['name']?>, 
-		<a href="code/logout.php"> Logout</a>
+		<a href="../../code/logout.php"> Logout</a>
 	</div>
 </nav>

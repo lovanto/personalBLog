@@ -3,5 +3,5 @@ session_start();
 session_destroy();
 ?>
 <script>
-window.history.back();
+	document.location='../';
 </script>
