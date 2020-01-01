@@ -12,7 +12,7 @@
 					<ul class="list-group list-group-flush">
 						<div class="bg-primary rounded-top p-3 whiteFont boldFont row" style="margin-left: -16px; margin-right: -16px;">
 							<div class="col-sm">
-								<img class="mr-2" src="../../images/icon/home.png" width="120">
+								<img class="mr-2" src="../../images/icon/user.png" width="120">
 							</div>
 							<div class="col-sm" align="right">
 								Pengguna <br> 
@@ -31,10 +31,10 @@
 					<ul class="list-group list-group-flush">
 						<div class="bg-success rounded-top p-3 whiteFont boldFont row" style="margin-left: -16px; margin-right: -16px;">
 							<div class="col-sm">
-								<img class="mr-2" src="../../images/icon/home.png" width="120">
+								<img class="mr-2" src="../../images/icon/post.png" width="120">
 							</div>
 							<div class="col-sm" align="right">
-								Pengguna <br> 
+								Postingan <br> 
 								110 Orang
 							</div>
 						</div>
@@ -50,10 +50,10 @@
 					<ul class="list-group list-group-flush">
 						<div class="bg-danger rounded-top p-3 whiteFont boldFont row" style="margin-left: -16px; margin-right: -16px;">
 							<div class="col-sm">
-								<img class="mr-2" src="../../images/icon/home.png" width="120">
+								<img class="mr-2" src="../../images/icon/comment.png" width="120">
 							</div>
 							<div class="col-sm" align="right">
-								Pengguna <br> 
+								Komentar <br> 
 								110 Orang
 							</div>
 						</div>
