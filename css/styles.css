@@ -155,3 +155,12 @@ a:hover{
 .textUnResize{
   resize: none;
 }
+
+.minMT{
+margin-top: -4px;
+}
+
+.minRNL{
+  margin-left: -16px; 
+  margin-right: -16px;
+}
