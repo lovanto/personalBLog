@@ -2,7 +2,7 @@
 	<div class="bg-light">
 		<div class="p-5">
 			<div class="jumbotron p-3 boldText mb-3">
-				<img class="mr-2" src="../../images/icon/home.png" width="20"> Dashboard
+				<img class="mr-2" src="../../images/icon/home.png" width="20" style="margin-top: -4px;"> Dashboard
 			</div>
 			<div class="alert alert-success" role="alert">
 				Selamat datang <?=$_SESSION['name']?> di dashboard admin...
@@ -22,7 +22,7 @@
 						<li class="list-group-item" align="right">
 							<a class="link_item" href="">
 								Klik untuk lebih lengkapnya..
-								<img class="ml-2" src="../../images/icon/home.png" width="20">
+								<img class="ml-2" src="../../images/icon/plus.png" width="20" style="margin-top: -4px;">
 							</a>
 						</li>
 					</ul>
@@ -41,7 +41,7 @@
 						<li class="list-group-item" align="right">
 							<a class="link_item" href="">
 								Klik untuk lebih lengkapnya..
-								<img class="ml-2" src="../../images/icon/home.png" width="20">
+								<img class="ml-2" src="../../images/icon/plus.png" width="20" style="margin-top: -4px;">
 							</a>
 						</li>
 					</ul>
@@ -60,7 +60,7 @@
 						<li class="list-group-item" align="right">
 							<a class="link_item" href="">
 								Klik untuk lebih lengkapnya..
-								<img class="ml-2" src="../../images/icon/home.png" width="20">
+								<img class="ml-2" src="../../images/icon/plus.png" width="20" style="margin-top: -4px;">
 							</a>
 						</li>
 					</ul>
