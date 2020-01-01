@@ -21,14 +21,24 @@ if ($count > 0 ) {
 	$_SESSION['id_user'] = $idUser;
 	$_SESSION['username'] = $usernameUser;
 	$_SESSION['name'] = $nameUser;
+	$_SESSION['class'] = $classUser;
 	$_SESSION['status'] = 'login';
 
+	if ($_SESSION['class'] != "Admin") {
 	?>
 	<script language="JavaScript">
 		alert('Selamat datang <?=$_SESSION['name']?>.');
 		window.history.go(-2);
 	</script>
 	<?php
+	}else{
+		?>
+		<script language="JavaScript">
+		alert('Selamat datang <?=$_SESSION['name']?> si admin.');
+		document.location='../view/adminSide/homeAdmin.php';
+	</script>
+	<?php
+	}
 }else{
 	?>
 	<script language="JavaScript">
