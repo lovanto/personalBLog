@@ -1,3 +1,17 @@
+<?php
+$sqlUser = "SELECT * FROM user_data";
+$sqlPost = "SELECT * FROM post";
+$sqlComment = "SELECT * FROM comment_user";
+
+$resultUser = mysqli_query($Open, $sqlUser);
+$resultPost = mysqli_query($Open, $sqlPost);
+$resultComment = mysqli_query($Open, $sqlComment);
+
+$countUser = mysqli_num_rows($resultUser);
+$countPost = mysqli_num_rows($resultPost);
+$countComment = mysqli_num_rows($resultComment);
+?>
+
 <div>
 	<div class="bg-light">
 		<div class="p-5">
@@ -14,10 +28,7 @@
 							<div class="col-sm">
 								<img class="mr-2" src="../../images/icon/user.png" width="120">
 							</div>
-							<div class="col-sm" align="right">
-								Pengguna <br> 
-								110 Orang
-							</div>
+							<div class="col-sm" align="right"><?=$countUser?> Pengguna</div>
 						</div>
 						<li class="list-group-item" align="right">
 							<a class="link_item" href="">
@@ -33,10 +44,7 @@
 							<div class="col-sm">
 								<img class="mr-2" src="../../images/icon/post.png" width="120">
 							</div>
-							<div class="col-sm" align="right">
-								Postingan <br> 
-								110 Orang
-							</div>
+							<div class="col-sm" align="right"><?=$countPost?> Postingan</div>
 						</div>
 						<li class="list-group-item" align="right">
 							<a class="link_item" href="">
@@ -52,10 +60,7 @@
 							<div class="col-sm">
 								<img class="mr-2" src="../../images/icon/comment.png" width="120">
 							</div>
-							<div class="col-sm" align="right">
-								Komentar <br> 
-								110 Orang
-							</div>
+							<div class="col-sm" align="right"><?=$countComment?> Komentar</div>
 						</div>
 						<li class="list-group-item" align="right">
 							<a class="link_item" href="">
