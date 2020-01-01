@@ -14,7 +14,7 @@ if (!empty($_SESSION['name'])) {
 				<input class="ml-2" type="radio" name="anonimOrNo" value="1" required> Iya
 				<input class="ml-2" type="radio" name="anonimOrNo" value="0" required> Tidak
 			</div>
-			<textarea class="form-control textUnResize" name="comment_content" rows="3" required></textarea>
+			<textarea class="form-control textUnResize" name="comment_content" id="comment_content" rows="3" required></textarea>
 			<div align="right">
 				<input class="btn btn-primary marginsTop col-md-2" type="submit" name="submit" id="submit" value="Kirim">
 			</div>
@@ -55,3 +55,4 @@ if ($count_data > 0) {
 }else{
 	echo '<div class="container"> Belum ada komentar. Jadilah orang pertama yang berkomentar... </div>';
 }
+?>
