@@ -1,5 +1,5 @@
 <div class="jumbotron p-3 boldText mb-3">
-	<img class="mr-2 minMT" src="../../images/icon/home.png" width="20"> Dashboard
+	<img class="mr-2 minMT" src="../../images/icon/flat-home.png" width="20"> Dashboard
 </div>
 <div class="alert alert-success" role="alert">
 	Selamat datang <?=$_SESSION['name']?> di dashboard admin...
