@@ -22,7 +22,6 @@
 					<input class="form-control" type="text" name="search" placeholder="Search.." style="width: 300px;">
 					<div class="input-group-append">
 						<input class="btn btn-primary border-right" type="submit" value="Search">
-						<!-- <input class="btn btn-primary" type="submit" name="show_all" value="Show All"> -->
 					</div>
 				</div>
 			</div>
@@ -46,8 +45,8 @@
 
 				if(isset($_GET['search'])){
 					$search = $_GET['search'];
-					$sql = mysqli_query($Open, "SELECT * FROM user_data WHERE name_user LIKE '%".$search."%' LIMIT $mulai, $halaman");
-					$query = mysqli_query($Open, "SELECT * FROM user_data WHERE name_user LIKE '%".$search."%'");
+					$sql = mysqli_query($Open, "SELECT * FROM user_data WHERE name_user LIKE '%".$search."%' ORDER BY id_user DESC LIMIT $mulai, $halaman");
+					$query = mysqli_query($Open, "SELECT * FROM user_data WHERE name_user LIKE '%".$search."%' ORDER BY id_user DESC");
 					$total = mysqli_num_rows($query);
 					?>
 					<?php
@@ -73,7 +72,7 @@
 						<td><?=$show['name_user']?></td>
 						<td><?=$show['username_user']?></td>
 						<td><?=$show['email_user']?></td>
-						<td>Edit | Hapus</td>
+						<td>Edit | <a href="../../code/delete/delete_user.php?id_user=<?php echo $show['id_user'];?>">Hapus</a></td>
 					</tr>
 					<?php
 				}
