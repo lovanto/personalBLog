@@ -44,7 +44,6 @@
 		<div align="center"><input class="btn btn-primary col-md-2 disabled" type="submit" name="submit" id="submit" value="Daftar"></div>
 	</div>
 </form>
-<script type="text/javascript"></script>
 
 <script>
 	$(document).ready(function() {

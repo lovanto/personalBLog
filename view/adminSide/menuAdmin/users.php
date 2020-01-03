@@ -7,7 +7,7 @@
 	</div>
 	<div class="jumbotron p-4">
 		<div class="float-left boldText">
-			<a class="link_item nav-link minMT" href="">
+			<a class="link_item nav-link minMT" href="#add_user">
 				Add New User <img class="ml-2 minMT" src="../../images/icon/plus.png" width="20">
 			</a>
 		</div>
@@ -224,4 +224,8 @@
 
 
 						</div>
+					</div>
+
+					<div id="add_user" class="modal-window2">
+						<?php include 'add_user.php'; ?>
 					</div>

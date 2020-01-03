@@ -20,6 +20,7 @@ if ($_SESSION['class'] != "Admin") {
 	<link href="../../css/styles.css" rel="stylesheet">
 	<link href="../../css/modal.css" rel="stylesheet">
 	<link rel="icon" href="../../icon.ico" type="image/x-icon" />
+	<script src="../../js/jquery.min.js"></script>
 </head>
 <body>	
 
