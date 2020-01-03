@@ -11,19 +11,21 @@
 				Add New User <img class="ml-2 minMT" src="../../images/icon/plus.png" width="20">
 			</a>
 		</div>
-		<div align="right" class="float-right">
-			<div class="input-group marginsBottom">
-				<input class="form-control" type="text" name="" placeholder="Search.." style="width: 300px;">
-				<div class="input-group-append">
-					<input class="btn btn-primary border-right" type="submit" name="" value="Search">
-					<input class="btn btn-primary" type="submit" name="" value="Show All">
+		<form action="homeAdmin.php" method="GET">
+			<div align="right" class="float-right">
+				<div class="input-group marginsBottom">
+					<input class="form-control" type="text" name="search" placeholder="Search.." style="width: 300px;">
+					<div class="input-group-append">
+						<input class="btn btn-primary border-right" type="submit" value="Search">
+						<!-- <input class="btn btn-primary" type="submit" name="show_all" value="Show All"> -->
+					</div>
 				</div>
 			</div>
-		</div>
+		</form>
 		<table class="table table-hover roundedCorners">
 			<thead class="bg-dark whiteFont">
 				<tr>
-					<th width="30">No</th>
+					<th width="40">No</th>
 					<th>Nama Lengkap</th>
 					<th>Username</th>
 					<th>Email</th>
@@ -32,13 +34,37 @@
 			</thead>
 			<tbody>
 				<?php
-				$numberRow = 0;
-				$query = "SELECT * FROM user_data";
-				$result = mysqli_query($Open, $query);
 
-				while ($show=mysqli_fetch_array($result)) {
-					$numberRow++;
-					?>
+$halaman = 5;
+$page = isset($_GET['pageNumber'])? (int)$_GET["pageNumber"]:1;
+$mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
+
+if(isset($_GET['search'])){
+	$search = $_GET['search'];
+	$sql = mysqli_query($Open, "SELECT * FROM user_data ORDER BY id_user DESC WHERE nama_user OR username_user LIKE '%".$search."%' LIMIT $mulai, $halaman");
+	$query = mysqli_query($Open, "SELECT * FROM user_data ORDER BY id_user DESC WHERE nama_user OR username_user LIKE '%".$search."%'");
+	$total = mysqli_num_rows($query);
+	?>
+	<div class="container boldFont marginsBottom">
+		Hasil Pencarian :
+	</div>
+	<?php
+	if ($total == 0) {
+		?>
+		<div class="container">Data tidak ditemukan...</div>
+		<?php
+	}
+}else{
+	$sql = mysqli_query($Open, "SELECT * FROM user_data ORDER BY id_user DESC LIMIT $mulai, $halaman");
+	$query = mysqli_query($Open, "SELECT * FROM user_data ORDER BY id_user DESC");
+	$total = mysqli_num_rows($query);
+}
+
+$pages = ceil($total/$halaman);
+$numberRow = $mulai;
+while ($show = mysqli_fetch_array($sql)) {
+	$numberRow++;
+	?>
 					<tr>
 						<td><?=$numberRow?></td>
 						<td><?=$show['name_user']?></td>
@@ -62,3 +88,128 @@
 		</table>
 	</div>
 </div>
+<div align="center">	
+	<nav aria-label="...">
+		<ul class="pagination justify-content-center">
+
+			<!-- BUTTON FIRST PAGE -->
+			<li class="page-item
+			<?php
+			if ($page == 1){
+				echo "active";
+				}else{
+
+				}
+				?>
+				"><a class="page-link" href="
+				<?php
+				if(isset($_GET['search'])){
+					echo "?page=users&search=$search&pageNumber=1";
+					}else{
+						echo "?page=users&pageNumber=1";
+					}
+					?>
+					">Pertama</a>
+				</li>
+
+				<!-- BUTTON PAGE BEFORE -->
+				<li class="page-item
+				<?php
+				$minusPage = $page-1;
+				if ($page == 1){
+					echo "disabled";
+					}else{
+
+					}
+					?>
+					"><a class="page-link" href="
+					<?php
+					if(isset($_GET['search'])){
+						echo "?page=users&search=$search&pageNumber=$minusPage";
+						}else{
+							echo "?page=users&pageNumber=$minusPage";
+						}
+						?>
+						"><<</a>
+					</li>
+
+					<?php 
+					$locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : 1;
+					$minPage = $page;
+					$maxPage = 5+$page;
+
+					// BUTTON PAGE NUMBER
+					for ($pagee=$minPage; $pagee<=$maxPage; $pagee++){			
+						if ($maxPage > $pages) {
+							$maxPage = $pages;
+							$pagee = $pages-5;
+							if ($pagee <= 1) {
+								$pagee = 1;
+							}
+						}
+						?>
+						<li class="page-item
+						<?php
+						if ($locPage == $pagee){
+							echo "active";
+							}else{
+
+							}
+							?>
+							"><a class="page-link" href="
+							<?php
+							if(isset($_GET['search'])){
+								echo "?page=users&search=$search&pageNumber=$pagee";
+								}else{
+									echo "?page=users&pageNumber=$pagee";
+								}
+								?>
+								"><?php echo $pagee; $locPage = (isset($_GET['pageNumber']))? $_GET['pageNumber'] : $pagee;?></a>
+							</li>
+							<?php
+						} 
+						?>
+
+						<!-- BUTTON PAGE AFTER -->
+						<li class="page-item
+						<?php
+						$plusPage = $page+1;
+						if ($page == $pages){
+							echo "disabled";
+							}else{
+
+							}
+							?>
+							"><a class="page-link" href="
+							<?php
+							if(isset($_GET['search'])){
+								echo "?page=users&search=$search&pageNumber=$plusPage";
+								}else{
+									echo "?page=users&pageNumber=$plusPage";
+								}
+								?>
+								">>></a>
+							</li>
+
+							<!-- BUTTON LAST PAGE -->
+							<li class="page-item
+							<?php
+							if ($page == $pages){
+								echo "active";
+								}else{
+
+								}
+								?>
+								"><a class="page-link" href="
+								<?php
+								if(isset($_GET['search'])){
+									echo "?page=users&search=$search&pageNumber=$pages";
+									}else{
+										echo "?page=users&pageNumber=$pages";
+									}
+									?>
+									">Terakhir</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
