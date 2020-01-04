@@ -72,7 +72,7 @@
 						<td><?=$show['name_user']?></td>
 						<td><?=$show['username_user']?></td>
 						<td><?=$show['email_user']?></td>
-						<td>Edit | <a href="../../code/delete/delete_user.php?id_user=<?php echo $show['id_user'];?>">Hapus</a></td>
+						<td><a href="menuAdmin/update_user_view.php?id_user=<?php echo $show['id_user'];?>">Edit</a> | <a href="../../code/delete/delete_user.php?id_user=<?php echo $show['id_user'];?>">Hapus</a></td>
 					</tr>
 					<?php
 				}
@@ -229,3 +229,12 @@
 					<div id="add_user" class="modal-window2">
 						<?php include 'add_user.php'; ?>
 					</div>
+
+					<script>
+						$('.Contact').click(function(){
+							var id=$('.Contact').val();
+							$.ajax({url:"ModalPage.php?id="+id,cache:false,success:function(result){
+								$(".modal-content").html(result);
+							}});
+						});
+				</script>

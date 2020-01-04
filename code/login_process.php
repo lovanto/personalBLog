@@ -2,7 +2,7 @@
 include '../conn.php';
 
 $username = $_POST['usernameLogin'];
-$password = md5($_POST['passwordLogin']);
+$password = $_POST['passwordLogin'];
 
 $sql = "SELECT * FROM user_data WHERE username_user = '$username' AND password_user = '$password'";
 $result = mysqli_query($Open, $sql);
