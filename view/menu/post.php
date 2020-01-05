@@ -13,7 +13,7 @@ while ($data = mysqli_fetch_array($sql)) {
 		<div class="col-sm" align="center">
 			<img class="marginsBottom marginsTop justify-content-center" src="<?=$data['image_post']?>" width="800">
 		</div>
-		<p><?=$data['description_post']?><br></p>
+		<p><?=$data['content_post']?><br></p>
 		<div class="boldFont marginsTop">
 			<?php 
 			if ($data['id_category']==1) {

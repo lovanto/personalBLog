@@ -14,7 +14,7 @@
 				<div class="col-sm" align="right"><?=$countUser?> Pengguna</div>
 			</div>
 			<li class="list-group-item" align="right">
-				<a class="link_item" href="">
+				<a class="link_item" href="homeAdmin.php?page=users">
 					Klik untuk lebih lengkapnya..
 					<img class="ml-2 minMT" src="../../images/icon/plus.png" width="20">
 				</a>
@@ -30,7 +30,7 @@
 				<div class="col-sm" align="right"><?=$countPost?> Postingan</div>
 			</div>
 			<li class="list-group-item" align="right">
-				<a class="link_item" href="">
+				<a class="link_item" href="homeAdmin.php?page=posting">
 					Klik untuk lebih lengkapnya..
 					<img class="ml-2 minMT" src="../../images/icon/plus.png" width="20">
 				</a>
@@ -46,7 +46,7 @@
 				<div class="col-sm" align="right"><?=$countComment?> Komentar</div>
 			</div>
 			<li class="list-group-item" align="right">
-				<a class="link_item" href="">
+				<a class="link_item" href="homeAdmin.php?page=comment">
 					Klik untuk lebih lengkapnya..
 					<img class="ml-2 minMT" src="../../images/icon/plus.png" width="20">
 				</a>

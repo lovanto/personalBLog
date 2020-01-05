@@ -10,18 +10,6 @@
 			<li class="nav-item text-center boldText">
 				<a class="nav-link space" href="index.php">Beranda</a>
 			</li>
-			<li class="nav-item text-center boldText">
-				<a class="nav-link space" href="index.php?page=programming">Programming</a>
-			</li>
-			<li class="nav-item text-center boldText">
-				<a class="nav-link space" href="index.php?page=tutorial">Tutorial</a>
-			</li>
-			<li class="nav-item text-center boldText">
-				<a class="nav-link space" href="index.php?page=emulator">Emulator</a>
-			</li>
-			<li class="nav-item text-center boldText">
-				<a class="nav-link space" href="index.php?page=about">Tentang Saya</a>
-			</li>
 			<?php
 			if (empty($_SESSION['class'])){
 				// DO NOTHING
@@ -35,6 +23,18 @@
 				// DO NOTHING
 			}
 			?>
+			<li class="nav-item text-center boldText">
+				<a class="nav-link space" href="index.php?page=programming">Programming</a>
+			</li>
+			<li class="nav-item text-center boldText">
+				<a class="nav-link space" href="index.php?page=tutorial">Tutorial</a>
+			</li>
+			<li class="nav-item text-center boldText">
+				<a class="nav-link space" href="index.php?page=emulator">Emulator</a>
+			</li>
+			<li class="nav-item text-center boldText">
+				<a class="nav-link space" href="index.php?page=about">Tentang Saya</a>
+			</li>
 		</ul>
 		<?php
 		if (empty($_SESSION['username'])){
