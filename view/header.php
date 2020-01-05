@@ -22,6 +22,19 @@
 			<li class="nav-item text-center boldText">
 				<a class="nav-link space" href="index.php?page=about">Tentang Saya</a>
 			</li>
+			<?php
+			if (empty($_SESSION['class'])){
+				// DO NOTHING
+			}elseif ($_SESSION['class'] == "Admin") {
+				?>
+				<li class="nav-item text-center boldText">
+					<a class="nav-link space" href="view/adminSide/homeAdmin.php">Beranda Admin</a>
+				</li>
+				<?php
+			}else{
+				// DO NOTHING
+			}
+			?>
 		</ul>
 		<?php
 		if (empty($_SESSION['username'])){
