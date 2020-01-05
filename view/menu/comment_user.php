@@ -34,23 +34,42 @@ $getComment = mysqli_query($Open, "SELECT * FROM comment_user WHERE id_post = '$
 $count_data = mysqli_num_rows($getComment);
 if ($count_data > 0) {
 	while ($resultComment = mysqli_fetch_array($getComment)) {
-		?>
-		<div class="container">
-			<div class="container rounded border marginsBottom">
-				<div class="marginsTop boldFont">
-					<?php
-					if ($resultComment['anonim'] == 1) {
-						echo "Anonim";
-					}else{
-						echo $resultComment['name_user'];
-					}
-					?>
+		if ($resultComment['comment_content'] == "Komentar ini dihapus karena mengandung kata kata yang tidak pantas.") {
+			?>
+			<div class="container">
+				<div class="container rounded border marginsBottom">
+					<div class="marginsTop boldFont">
+						<?php
+						if ($resultComment['anonim'] == 1) {
+							echo "Anonim";
+						}else{
+							echo $resultComment['name_user'];
+						}
+						?>
+					</div>
+					<div class="space marginsTop marginsBottom"><?=$resultComment['comment_content']?></div>
 				</div>
-				<div class="space marginsTop"><?=$resultComment['comment_content']?></div>
-				<div class="space marginsBottom marginsTop" align="right"><?=$resultComment['date_comment']?></div>
 			</div>
-		</div>
-		<?php
+			<?php
+		}else{
+			?>
+			<div class="container">
+				<div class="container rounded border marginsBottom">
+					<div class="marginsTop boldFont">
+						<?php
+						if ($resultComment['anonim'] == 1) {
+							echo "Anonim";
+						}else{
+							echo $resultComment['name_user'];
+						}
+						?>
+					</div>
+					<div class="space marginsTop"><?=$resultComment['comment_content']?></div>
+					<div class="space marginsBottom marginsTop" align="right"><?=$resultComment['date_comment']?></div>
+				</div>
+			</div>
+			<?php
+		}
 	}
 }else{
 	echo '<div class="container"> Belum ada komentar. Jadilah orang pertama yang berkomentar... </div>';
