@@ -13,8 +13,10 @@ while ($data = mysqli_fetch_array($sql)) {
 		<div class="col-sm" align="center">
 			<img class="marginsBottom marginsTop justify-content-center" src="<?=$data['image_post']?>" width="800">
 		</div>
-		<p><?=$data['content_post']?><br></p>
+		<p class="marginsBottom"><?=$data['content_post']?><br></p>
+		<div align="right">Diupload pada <?=$data['date_posted']?>.<br> Ditulis oleh <?=$data['writed_by']?></div>
 		<div class="boldFont marginsTop">
+			Kategori: 
 			<?php 
 			if ($data['id_category']==1) {
 				echo "Programming";

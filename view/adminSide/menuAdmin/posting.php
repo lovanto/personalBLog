@@ -31,6 +31,7 @@
 					<th>Deskripsi Postingan</th>
 					<th width="100">Kategori</th>
 					<th width="50">Views</th>
+					<th width="50">Status</th>
 					<th width="120">Opsi</th>
 				</tr>
 			</thead>
@@ -71,6 +72,7 @@
 						<td><?=$show['description_post']?></td>
 						<td><?=$show['id_category']?></td>
 						<td><?=$show['hit']?></td>
+						<td><?=$show['status_post']?></td>
 						<td><a href="menuAdmin/update_post_view.php?id_post=<?php echo $show['id_post'];?>">Edit</a> | <a href="../../code/delete/delete_post.php?id_post=<?php echo $show['id_post'];?>">Hapus</a></td>
 					</tr>
 					<?php
