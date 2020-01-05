@@ -1,5 +1,4 @@
 <?php
-include '../../../conn.php';
 
 $id_user = $_GET['id_user'];
 $getData = "SELECT * FROM user_data WHERE id_user = '$id_user'";
@@ -7,15 +6,10 @@ $queryData = mysqli_query($Open, $getData);
 $show = mysqli_fetch_array($queryData);
 
 ?>
-<link href="../../../css/bootstrap-4.0.0.css" rel="stylesheet">
-<link href="../../../css/styles.css" rel="stylesheet">
-<link href="../../../css/modal.css" rel="stylesheet">
-<script src="../../../js/jquery.min.js"></script>
-
-<div class="container mt-5">
-	<h1>Create new user</h1>
+<div class="container">
+	<h1>Update user</h1>
 	<hr>
-	<form action="../../../code/update/update_user.php" method="POST">
+	<form action="../../code/update/update_user.php" method="POST">
 		<div class="container">
 			<input type="hidden" name="id_user" value="<?=$show['id_user']?>">
 
@@ -122,7 +116,7 @@ $show = mysqli_fetch_array($queryData);
 				$("#validate-status_username").text("").css('color', 'red'); 
 
 				if (username_user!='') {
-					$.post('../../../code/check_user_exist.php', {username:username_user},
+					$.post('../../code/check_user_exist.php', {username:username_user},
 
 						function(data) {
 							$('#validate-status_username').html(data);

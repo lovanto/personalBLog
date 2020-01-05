@@ -69,7 +69,7 @@
 						<td><?=$show['name_user']?></td>
 						<td><?=$show['username_user']?></td>
 						<td><?=$show['email_user']?></td>
-						<td><a href="menuAdmin/update_user_view.php?id_user=<?php echo $show['id_user'];?>">Edit</a> | <a href="../../code/delete/delete_user.php?id_user=<?php echo $show['id_user'];?>">Hapus</a></td>
+						<td><a href="homeAdmin.php?page=update_users&id_user=<?php echo $show['id_user'];?>">Edit</a> | <a href="../../code/delete/delete_user.php?id_user=<?php echo $show['id_user'];?>">Hapus</a></td>
 					</tr>
 					<?php
 				}

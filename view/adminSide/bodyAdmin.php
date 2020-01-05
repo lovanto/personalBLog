@@ -20,7 +20,12 @@ $countComment = mysqli_num_rows($resultComment);
 			switch ($page) {
 				case 'dashboard': include 'menuAdmin/dashboard.php'; break;
 				case 'users': include 'menuAdmin/users.php'; break;
+				case 'update_users': include 'menuAdmin/update_user_view.php'; break;
+
 				case 'posting': include 'menuAdmin/posting.php'; break;
+				case 'create_posting': include 'menuAdmin/create_post_view.php'; break;
+				case 'update_posting': include 'menuAdmin/update_post_view.php'; break;
+
 				case 'comment': include 'menuAdmin/comment.php'; break;
 				
 				case 'main': 

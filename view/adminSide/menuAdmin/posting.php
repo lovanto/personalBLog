@@ -4,7 +4,7 @@
 	</div>
 	<div class="jumbotron p-4">
 		<div class="float-left boldText">
-			<a class="link_item nav-link minMT" href="menuAdmin/update_post_view.php">
+			<a class="link_item nav-link minMT" href="homeAdmin.php?page=create_posting">
 				Add New Postingan <img class="ml-2 minMT" src="../../images/icon/plus.png" width="20">
 			</a>
 		</div>
