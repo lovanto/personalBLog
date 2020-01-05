@@ -6,8 +6,8 @@ $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
 
 if(isset($_GET['search'])){
 	$search = $_GET['search'];
-	$sql = mysqli_query($Open, "SELECT * FROM post WHERE title_post LIKE '%".$search."%' LIMIT $mulai, $halaman");
-	$query = mysqli_query($Open, "SELECT * FROM post WHERE title_post LIKE '%".$search."%'");
+	$sql = mysqli_query($Open, "SELECT * FROM post WHERE status_post = 'posted' AND title_post LIKE '%".$search."%' LIMIT $mulai, $halaman");
+	$query = mysqli_query($Open, "SELECT * FROM post WHERE status_post = 'posted' AND title_post LIKE '%".$search."%'");
 	$total = mysqli_num_rows($query);
 	?>
 	<div class="container boldFont marginsBottom">
@@ -20,8 +20,8 @@ if(isset($_GET['search'])){
 		<?php
 	}
 }else{
-	$sql = mysqli_query($Open, "SELECT * FROM post ORDER BY id_post DESC LIMIT $mulai, $halaman");
-	$query = mysqli_query($Open, "SELECT * FROM post");
+	$sql = mysqli_query($Open, "SELECT * FROM post WHERE status_post = 'posted' ORDER BY id_post DESC LIMIT $mulai, $halaman");
+	$query = mysqli_query($Open, "SELECT * FROM post WHERE status_post = 'posted'");
 	$total = mysqli_num_rows($query);
 }
 
