@@ -4,7 +4,7 @@
 	</div>
 	<div class="jumbotron p-4">
 		<div class="float-left boldText">
-			<a class="link_item nav-link minMT" href="#add_user">
+			<a class="link_item nav-link minMT" href="menuAdmin/update_post_view.php">
 				Add New Postingan <img class="ml-2 minMT" src="../../images/icon/plus.png" width="20">
 			</a>
 		</div>
@@ -220,20 +220,5 @@
 									</ul>
 								</nav>
 							</div>
-
-
 						</div>
 					</div>
-
-					<div id="add_user" class="modal-window2">
-						<?php include 'add_user.php'; ?>
-					</div>
-
-					<script>
-						$('.Contact').click(function(){
-							var id=$('.Contact').val();
-							$.ajax({url:"ModalPage.php?id="+id,cache:false,success:function(result){
-								$(".modal-content").html(result);
-							}});
-						});
-				</script>

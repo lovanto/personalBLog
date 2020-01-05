@@ -226,12 +226,3 @@
 					<div id="add_user" class="modal-window2">
 						<?php include 'add_user.php'; ?>
 					</div>
-
-					<script>
-						$('.Contact').click(function(){
-							var id=$('.Contact').val();
-							$.ajax({url:"ModalPage.php?id="+id,cache:false,success:function(result){
-								$(".modal-content").html(result);
-							}});
-						});
-				</script>
