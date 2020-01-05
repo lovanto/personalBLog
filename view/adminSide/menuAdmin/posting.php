@@ -74,7 +74,7 @@
 						<td><?=$show['description_post']?></td>
 						<td><?=$show['id_category']?></td>
 						<td><?=$show['hit']?></td>
-						<td><a href="menuAdmin/update_user_view.php?id_user=<?php echo $show['id_user'];?>">Edit</a> | <a href="../../code/delete/delete_user.php?id_user=<?php echo $show['id_user'];?>">Hapus</a></td>
+						<td><a href="menuAdmin/update_post_view.php?id_post=<?php echo $show['id_post'];?>">Edit</a> | <a href="../../code/delete/delete_post.php?id_post=<?php echo $show['id_post'];?>">Hapus</a></td>
 					</tr>
 					<?php
 				}
