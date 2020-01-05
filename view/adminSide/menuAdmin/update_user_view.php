@@ -77,57 +77,57 @@ $show = mysqli_fetch_array($queryData);
 			<div align="center"><input class="btn btn-primary col-md-2 disabled" type="submit" name="submit" id="submit" value="Perbarui Data"></div>
 		</div>
 	</form>
-
-	<script>
-		$(document).ready(function() {
-			$("#password_user").keyup(validate);
-			$("#password_user_confirm").keyup(validate);
-			$("#username_user").keyup(validate_user);
-		});
-
-		function validate() {
-			var password_user = $("#password_user").val();
-			var password_user_confirm = $("#password_user_confirm").val();
-
-			if (password_user.length <= 20 && password_user.length >= 8) {
-				$("#validate-status").text("").css('color', 'red');  
-				document.getElementById("submit").classList.remove('disabled'); 
-
-				if(password_user == password_user_confirm) {  
-					$("#validate-status").text("").css('color', 'red');    
-					document.getElementById("submit").classList.remove('disabled'); 
-					validate_user();
-				}
-				else {
-					$("#validate-status").text("Password tidak sesuai.").css('color', 'red');  
-					document.getElementById("submit").classList.add('disabled'); 
-				}
-
-			} else {
-				$("#validate-status").text("Password minimal 8 karakter dan maksimal 20 karakter.").css('color', 'red');  
-				document.getElementById("submit").classList.add('disabled'); 
-			}
-		}
-
-		function validate_user() {
-			var username_user = $("#username_user").val();
-
-			if (username_user.length <= 20 && username_user.length >= 8) {
-				$("#validate-status_username").text("").css('color', 'red'); 
-
-				if (username_user!='') {
-					$.post('../../code/check_user_exist.php', {username:username_user},
-
-						function(data) {
-							$('#validate-status_username').html(data);
-						})
-				}else{
-					$('#validate-status_username').html('');
-				}
-			} else {
-				$("#validate-status_username").text("Username minimal 8 karakter dan maksimal 20 karakter.").css('color', 'red');  
-				document.getElementById("submit").classList.add('disabled'); 
-			}
-		}
-	</script>
 </div>
+
+<script>
+	$(document).ready(function() {
+		$("#password_user").keyup(validate);
+		$("#password_user_confirm").keyup(validate);
+		$("#username_user").keyup(validate_user);
+	});
+
+	function validate() {
+		var password_user = $("#password_user").val();
+		var password_user_confirm = $("#password_user_confirm").val();
+
+		if (password_user.length <= 20 && password_user.length >= 8) {
+			$("#validate-status").text("").css('color', 'red');  
+			document.getElementById("submit").classList.remove('disabled'); 
+
+			if(password_user == password_user_confirm) {  
+				$("#validate-status").text("").css('color', 'red');    
+				document.getElementById("submit").classList.remove('disabled'); 
+				validate_user();
+			}
+			else {
+				$("#validate-status").text("Password tidak sesuai.").css('color', 'red');  
+				document.getElementById("submit").classList.add('disabled'); 
+			}
+
+		} else {
+			$("#validate-status").text("Password minimal 8 karakter dan maksimal 20 karakter.").css('color', 'red');  
+			document.getElementById("submit").classList.add('disabled'); 
+		}
+	}
+
+	function validate_user() {
+		var username_user = $("#username_user").val();
+
+		if (username_user.length <= 20 && username_user.length >= 8) {
+			$("#validate-status_username").text("").css('color', 'red'); 
+
+			if (username_user!='') {
+				$.post('../../code/check_user_exist.php', {username:username_user},
+
+					function(data) {
+						$('#validate-status_username').html(data);
+					})
+			}else{
+				$('#validate-status_username').html('');
+			}
+		} else {
+			$("#validate-status_username").text("Username minimal 8 karakter dan maksimal 20 karakter.").css('color', 'red');  
+			document.getElementById("submit").classList.add('disabled'); 
+		}
+	}
+</script>

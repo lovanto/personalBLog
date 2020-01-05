@@ -170,3 +170,17 @@ margin-top: -4px;
   border-left: 3px solid green;
   height: 500px;
 }
+
+.visible-false{
+  display: none;
+}
+
+.visible-true{
+  display: inline;
+}
+
+.activeButton{
+  color: #fff;
+  background-color: #0062cc;
+  border-color: #005cbf;
+}
