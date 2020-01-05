@@ -2,9 +2,6 @@
 	<div class="jumbotron p-3 boldText mb-3">
 		<img class="mr-2 minMT" src="../../images/icon/flat-comment.png" width="20"> Komentar
 	</div>
-	<div class="alert alert-success" role="alert">
-		Selamat datang <?=$_SESSION['name']?> di komentar manajer area...
-	</div>
 	<div class="jumbotron p-4">
 		<div class="float-left boldText">
 		</div>

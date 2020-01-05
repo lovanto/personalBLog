@@ -2,9 +2,6 @@
 	<div class="jumbotron p-3 boldText mb-3">
 		<img class="mr-2 minMT" src="../../images/icon/flat-user.png" width="20"> Pengguna
 	</div>
-	<div class="alert alert-success" role="alert">
-		Selamat datang <?=$_SESSION['name']?> di users manajer area...
-	</div>
 	<div class="jumbotron p-4">
 		<div class="float-left boldText">
 			<a class="link_item nav-link minMT" href="#add_user">
