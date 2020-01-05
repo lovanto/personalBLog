@@ -65,7 +65,7 @@ if ($count_data > 0) {
 						?>
 					</div>
 					<div class="space marginsTop"><?=$resultComment['comment_content']?></div>
-					<div class="space marginsBottom marginsTop" align="right"><?=$resultComment['date_comment']?></div>
+					<div class="space marginsBottom" align="right"><?=$resultComment['date_comment']?></div>
 				</div>
 			</div>
 			<?php
