@@ -9,30 +9,30 @@
 					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton minFont" name="btn-html" id="btn-html" title="HTML mode">HTML</button>
 				</div>
 				<div class="marginsBottom border mr-2">
-					<button class="btn btn-default m-1 boldFont border border-rounded zoomButton minFont" name="btn-compose" id="btn-compose" title="Bold">B</button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton minFont" name="btn-html" id="btn-html" title="Italic" style="font-style: italic;">I</button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton minFont" name="btn-compose" id="btn-compose" title="Underline" style="text-decoration: underline;">U</button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton minFont" name="btn-html" id="btn-html" title="Strikethrough" style="text-decoration: line-through;">ABC</button>
+					<button class="btn btn-default m-1 boldFont border border-rounded zoomButton minFont" name="" id="" title="Bold">B</button>
+					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton minFont" name="" id="" title="Italic" style="font-style: italic;">I</button>
+					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton minFont" name="" id="" title="Underline" style="text-decoration: underline;">U</button>
+					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton minFont" name="" id="" title="Strikethrough" style="text-decoration: line-through;">ABC</button>
 				</div>
 				<div class="marginsBottom border mr-2">
-					<button class="btn btn-default m-1 boldFont border border-rounded zoomButton" name="btn-compose" id="btn-compose" title="Text color"><img src="../../images/icon/text-editor.png" width="15"></button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="btn-html" id="btn-html" title="Text background color" style="font-style: italic;"><img src="../../images/icon/text-background.png" width="20"></button>
+					<button class="btn btn-default m-1 boldFont border border-rounded zoomButton" name="" id="" title="Text color"><img src="../../images/icon/text-editor.png" width="15"></button>
+					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="" id="" title="Text background color" style="font-style: italic;"><img src="../../images/icon/text-background.png" width="20"></button>
 				</div>
 				<div class="marginsBottom border mr-2">
-					<button class="btn btn-default m-1 boldFont border border-rounded zoomButton minFont" name="btn-compose" id="btn-compose" title="Insert link">Link</button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="btn-html" id="btn-html" title="Insert image" style="font-style: italic;"><img src="../../images/icon/picture.png" width="20"></button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="btn-compose" id="btn-compose" title="Insert video" style="text-decoration: underline; "><img src="../../images/icon/video-player.png" width="20"></button>
+					<button class="btn btn-default m-1 boldFont border border-rounded zoomButton minFont" name="btn-compose" id="btn-compose" title="Insert link" style="color: blue;">Link</button>
+					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="" id="" title="Insert video" style="text-decoration: underline; "><img src="../../images/icon/picture.png" width="20"></button>
+					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="" id="" title="Insert video" style="text-decoration: underline; "><img src="../../images/icon/video-player.png" width="20"></button>
 				</div>
 				<div class="marginsBottom border mr-2">
-					<button class="btn btn-default m-1 boldFont border border-rounded zoomButton minFont" name="btn-compose" id="btn-compose" title="Align">Align</button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="btn-html" id="btn-html" title="Numeric list" style="font-style: italic;"><img src="../../images/icon/numbered-list.png" width="20"></button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="btn-compose" id="btn-compose" title="Bullet list" style="text-decoration: underline; "><img src="../../images/icon/bullet-list.png" width="20"></button>
+					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="" id="" title="Align" style="font-style: italic;"><img src="../../images/icon/align-left.png" width="20"></button>
+					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="" id="" title="Numeric list" style="font-style: italic;"><img src="../../images/icon/numbered-list.png" width="20"></button>
+					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="" id="" title="Bullet list" style="text-decoration: underline; "><img src="../../images/icon/bullet-list.png" width="20"></button>
 				</div>
 			</div>
 			<div>
 				<div class="input-group-text mb-1">Konten Postingan</div>
-				<textarea class="form-control textUnResize" name="comment_content" id="comment_content" rows="20" style="overflow: scroll;">adwadawdawdwad</textarea>
-				<textarea class="form-control textUnResize visible-false" name="comment_content_html" id="comment_content_html" rows="20" style="overflow: scroll;">adaw</textarea>
+				<textarea class="form-control textUnResize marginsBottom" name="comment_content" id="comment_content" rows="20" style="overflow: scroll;">adwadawdawdwad</textarea>
+				<textarea class="form-control textUnResize visible-false marginsBottom" name="comment_content_html" id="comment_content_html" rows="20" style="overflow: scroll;">adaw</textarea>
 			</div>
 		</div>
 		<div class="col-md-3">
