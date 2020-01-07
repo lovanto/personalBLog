@@ -5,14 +5,17 @@
 
 <h1>Create new post</h1>
 <hr>
-<!-- <form action="../../code/update/update_user.php" method="POST"> -->
+<form action="../../code/create/create_post.php" method="POST">
+	<input class="form-control" type="text" name="id_user" id="id_user" value="<?=$_SESSION['id_user'];?>" required>
+	<input class="form-control" type="text" name="name" id="name" value="<?=$_SESSION['name'];?>" required>
 	<div class="row">
+
 		<div class="col-sm minML-2 minMR-2">
 			<main>
 				<div class="adjoined-bottom">
 					<div class="grid-container">
 						<div class="grid-width-100">
-							<textarea id="editor">
+							<textarea id="editor" name="editor" required>
 								<h1>Hello world!</h1>
 								<p>I'm an instance of <a href="https://ckeditor.com">CKEditor</a>.</p>
 							</textarea>
@@ -21,29 +24,30 @@
 				</div>
 			</main>
 		</div>
+
 		<div class="col-md-3 border-left">
 			<div class="input-group marginsBottom">
 				<div class="input-group-prepend">
 					<div class="input-group-text">Judul</div>
 				</div>
-				<input class="form-control" type="text" name="name_user" maxlength="70">
+				<input class="form-control" type="text" name="title_post" id="title_post" maxlength="70" required>
 			</div>
 
 			<div class="custom-file marginsBottom">
 				<label class="custom-file-label" id="label-image" for="image_post">Pilih foto</label>
-				<input type="file" class="custom-file-input" id="image_post" name="image_post">
+				<input type="file" class="custom-file-input" id="image_post" name="image_post" required>
 			</div>
 
 			<div class="marginsBottom">
 				<div class="input-group-text mb-1">Deskripsi Postingan</div>
-				<textarea class="form-control textUnResize" name="comment_content" id="comment_content" maxlength="245" rows="3"></textarea>
+				<textarea class="form-control textUnResize" name="description_post" id="description_post" maxlength="245" rows="3" required></textarea>
 			</div>
 
 			<div class="input-group marginsBottom">
 				<div class="input-group-prepend">
 					<div class="input-group-text">Kategori</div>
 				</div>
-				<select class="form-control">
+				<select class="form-control" name="id_category" id="id_category" required>
 					<option value="1">Programming</option>
 					<option value="2">Tutorial</option>
 					<option value="3">Emulator</option>
@@ -56,8 +60,8 @@
 			</div>
 		</div>
 	</div>
-	<!-- </form> -->
+</form>
 
-	<script>
-		initSample();
-	</script>
+<script>
+	initSample();
+</script>
