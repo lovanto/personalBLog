@@ -1,41 +1,27 @@
+<script src="../../ckeditor/ckeditor.js"></script>
+<script src="../../ckeditor/samples/js/sample.js"></script>
+<link rel="stylesheet" href="../../ckeditor/samples/css/samples.css">
+<link rel="stylesheet" href="../../ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
+
 <h1>Create new post</h1>
 <hr>
 <!-- <form action="../../code/update/update_user.php" method="POST"> -->
 	<div class="row">
-		<div class="col-sm border-right">
-			<div class="row container">
-				<div class="marginsBottom border mr-2">
-					<button class="btn btn-default m-1 border border-rounded zoomButton minFont" name="btn-compose" id="btn-compose" title="Compose mode">Compose</button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton minFont" name="btn-html" id="btn-html" title="HTML mode">HTML</button>
+		<div class="col-sm minML-2 minMR-2">
+			<main>
+				<div class="adjoined-bottom">
+					<div class="grid-container">
+						<div class="grid-width-100">
+							<textarea id="editor">
+								<h1>Hello world!</h1>
+								<p>I'm an instance of <a href="https://ckeditor.com">CKEditor</a>.</p>
+							</textarea>
+						</div>
+					</div>
 				</div>
-				<div class="marginsBottom border mr-2">
-					<button class="btn btn-default m-1 boldFont border border-rounded zoomButton minFont" name="" id="" title="Bold">B</button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton minFont" name="" id="" title="Italic" style="font-style: italic;">I</button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton minFont" name="" id="" title="Underline" style="text-decoration: underline;">U</button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton minFont" name="" id="" title="Strikethrough" style="text-decoration: line-through;">ABC</button>
-				</div>
-				<div class="marginsBottom border mr-2">
-					<button class="btn btn-default m-1 boldFont border border-rounded zoomButton" name="" id="" title="Text color"><img src="../../images/icon/text-editor.png" width="15"></button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="" id="" title="Text background color" style="font-style: italic;"><img src="../../images/icon/text-background.png" width="20"></button>
-				</div>
-				<div class="marginsBottom border mr-2">
-					<button class="btn btn-default m-1 boldFont border border-rounded zoomButton minFont" name="btn-compose" id="btn-compose" title="Insert link" style="color: blue;">Link</button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="" id="" title="Insert video" style="text-decoration: underline; "><img src="../../images/icon/picture.png" width="20"></button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="" id="" title="Insert video" style="text-decoration: underline; "><img src="../../images/icon/video-player.png" width="20"></button>
-				</div>
-				<div class="marginsBottom border mr-2">
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="" id="" title="Align" style="font-style: italic;"><img src="../../images/icon/align-left.png" width="20"></button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="" id="" title="Numeric list" style="font-style: italic;"><img src="../../images/icon/numbered-list.png" width="20"></button>
-					<button class="btn btn-default mr-1 mt-1 mb-1 border border-rounded zoomButton" name="" id="" title="Bullet list" style="text-decoration: underline; "><img src="../../images/icon/bullet-list.png" width="20"></button>
-				</div>
-			</div>
-			<div>
-				<div class="input-group-text mb-1">Konten Postingan</div>
-				<textarea class="form-control textUnResize marginsBottom" name="comment_content" id="comment_content" rows="20" style="overflow: scroll;">adwadawdawdwad</textarea>
-				<textarea class="form-control textUnResize visible-false marginsBottom" name="comment_content_html" id="comment_content_html" rows="20" style="overflow: scroll;">adaw</textarea>
-			</div>
+			</main>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3 border-left">
 			<div class="input-group marginsBottom">
 				<div class="input-group-prepend">
 					<div class="input-group-text">Judul</div>
@@ -73,31 +59,5 @@
 	<!-- </form> -->
 
 	<script>
-		$(document).ready(function() {
-			document.getElementById("btn-compose").classList.add('activeButton'); 
-			$("#btn-compose").click(showCompose);
-			$("#btn-html").click(showHtml);
-		});
-
-		$("#image_post").change(function() {
-			filename = this.files[0].name;
-			$("#label-image").text(filename);
-		});
-
-		function showCompose() {
-			document.getElementById("comment_content").classList.add('visible-true'); 
-			document.getElementById("comment_content_html").classList.add('visible-false');  
-			document.getElementById("comment_content_html").classList.remove('visible-true'); 
-			document.getElementById("btn-compose").classList.add('activeButton'); 
-			document.getElementById("btn-html").classList.remove('activeButton'); 
-		}
-
-		function showHtml() {
-			document.getElementById("comment_content_html").classList.add('visible-true'); 
-			document.getElementById("comment_content").classList.add('visible-false'); 
-			document.getElementById("comment_content").classList.remove('visible-true'); 
-			document.getElementById("btn-html").classList.add('activeButton'); 
-			document.getElementById("btn-compose").classList.remove('activeButton'); 
-		}
-
+		initSample();
 	</script>
