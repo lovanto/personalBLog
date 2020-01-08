@@ -6,8 +6,8 @@
 <h1>Create new post</h1>
 <hr>
 <form action="../../code/create/create_post.php" method="POST">
-	<input class="form-control" type="text" name="id_user" id="id_user" value="<?=$_SESSION['id_user'];?>" required>
-	<input class="form-control" type="text" name="name" id="name" value="<?=$_SESSION['name'];?>" required>
+	<input class="form-control" type="hidden" name="id_user" id="id_user" value="<?=$_SESSION['id_user'];?>" required>
+	<input class="form-control" type="hidden" name="name" id="name" value="<?=$_SESSION['name'];?>" required>
 	<div class="row">
 
 		<div class="col-sm minML-2 minMR-2">
