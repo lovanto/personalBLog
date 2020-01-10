@@ -24,7 +24,6 @@
 				</div>
 			</main>
 		</div>
-
 		<div class="col-md-3 border-left">
 			<div class="input-group marginsBottom">
 				<div class="input-group-prepend">

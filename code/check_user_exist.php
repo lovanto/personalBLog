@@ -5,6 +5,12 @@ if (isset($_POST['username'])) {
 	$username = mysqli_real_escape_string($Open, $_POST['username']);
 
 	if (!empty($username) ) {
+		?>
+			<script type="text/javascript">
+				$("#validate-status_username").text("Loading.").css('color', 'red'); 
+				document.getElementById("submit").classList.add('disabled'); 
+			</script>
+			<?php
 		$sql = "SELECT username_user FROM user_data WHERE username_user = '$username'";
 		$result = mysqli_query($Open, $sql); 
 		$row_count = mysqli_num_rows($result);
