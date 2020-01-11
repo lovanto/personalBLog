@@ -15,7 +15,7 @@
 				<div class="adjoined-bottom">
 					<div class="grid-container">
 						<div class="grid-width-100">
-							<textarea id="editor" name="editor" required>
+							<textarea id="editor" name="editor" rows="10000" required>
 								<h1>Hello world!</h1>
 								<p>I'm an instance of <a href="https://ckeditor.com">CKEditor</a>.</p>
 							</textarea>
@@ -25,6 +25,13 @@
 			</main>
 		</div>
 		<div class="col-md-3 border-left">
+			<div class="input-group marginsBottom">
+				<div class="input-group-prepend">
+					<div class="input-group-text">Judul</div>
+				</div>
+				<?php include '../../googledrive/index.php';?>
+			</div>
+
 			<div class="input-group marginsBottom">
 				<div class="input-group-prepend">
 					<div class="input-group-text">Judul</div>
