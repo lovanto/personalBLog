@@ -10,7 +10,7 @@
 			<a class="nav-link space" href="../../">Beranda Umum</a>
 		</li>
 		<li class="nav-item text-center boldText">
-			<a class="nav-link space" href="../../googledrive">GDRIVE</a>
+			<a class="nav-link space" href="../../googledrive/index.php">GDRIVE</a>
 		</li>
 		<li class="nav-item text-center boldText">
 			<a class="nav-link space" href="homeAdmin.php?page=users">Pengguna</a>
