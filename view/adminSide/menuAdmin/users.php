@@ -1,6 +1,6 @@
 <div>
 	<div class="jumbotron p-3 boldText mb-3">
-		<img class="mr-2 minMT" src="../../images/icon/flat-user.png" width="20"> Pengguna
+		<?php echo cl_image_tag('flat-user', array("width"=>20))?> Pengguna
 	</div>
 	<div class="jumbotron p-4">
 		<div class="float-left boldText">

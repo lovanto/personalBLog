@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row marginsTop marginsBottom">
 		<div class="col-sm">
-			<img class="rounded" src="images/profil/img.JPG" width="100%">
+			<?php echo cl_image_tag('profil-toto', array("width"=>400));?>
 		</div>
 		<div class="col-sm">
 			<p>Nama: Rifky Lovanto</p>

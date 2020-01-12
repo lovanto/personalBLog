@@ -1,11 +1,11 @@
 <div>
 	<div class="jumbotron p-3 boldText mb-3">
-		<img class="mr-2 minMT" src="../../images/icon/flat-post.png" width="20"> Postingan
+		<?php echo cl_image_tag('flat-posting', array("width"=>20))?> Postingan
 	</div>
 	<div class="jumbotron p-4">
 		<div class="float-left boldText">
 			<a class="link_item nav-link minMT" href="homeAdmin.php?page=create_posting">
-				Add New Postingan <img class="ml-2 minMT" src="../../images/icon/plus.png" width="20">
+				Add New Postingan <?php echo cl_image_tag('plus', array("width"=>20, "margin"=>20))?>
 			</a>
 		</div>
 		<form action="homeAdmin.php?" method="GET">

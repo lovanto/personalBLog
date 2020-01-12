@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="../../ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
 
 <h1>Create new post</h1>
-<a href="#uploadImage">Upload</a>
+<a href="#uploadImage">Upload New Image</a>
 <hr>
 <form action="../../code/create/create_post.php" method="POST">
 	<input class="form-control" type="hidden" name="id_user" id="id_user" value="<?=$_SESSION['id_user'];?>">
