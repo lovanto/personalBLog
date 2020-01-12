@@ -8,7 +8,7 @@ if (isset($_POST['simpan'])) {
 	$gambar = $_FILES['file']['name'];
 	$file_tmp = $_FILES['file']['tmp_name'];
 
-	\Cloudinary\Uploader::upload($file_tmp, array('public_id' => $nama));
+	\Cloudinary\Uploader::upload($file_tmp, array('public_id' => $nama, "timeout" => 120));
 }
 ?>
 
