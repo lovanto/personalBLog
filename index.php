@@ -16,7 +16,7 @@ session_start();
 	<script src="js/jquery.min.js"></script>
 	<link rel="icon" href="icon.ico" type="image/x-icon" />
 </head>
-<body onload="setInterval('displayServerTime()', 1000);">
+<body>
 
 	<?php 
 	require 'cloudinary/vendor/autoload.php';
