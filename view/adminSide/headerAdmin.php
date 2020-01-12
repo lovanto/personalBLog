@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 10px 0; font-size: 13px; padding-left: 10px;">
 	<ul class="navbar-nav mr-auto">
 		<li class="nav-item text-center">
-			<a class="nav-link space blueImage" href="homeAdmin.php?page=home"><img src="../../images/icon.png" width="20px"></a>
+			<a class="nav-link space blueImage" href="homeAdmin.php?page=home"><?php echo cl_image_tag('icon', array("width"=>20))?></a>
 		</li>
 		<li class="nav-item text-center boldText">
 			<a class="nav-link space" href="homeAdmin.php?page=home">Dashboard</a>

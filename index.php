@@ -19,6 +19,9 @@ session_start();
 <body onload="setInterval('displayServerTime()', 1000);">
 
 	<?php 
+	require 'cloudinary/vendor/autoload.php';
+	require 'cloudinary/config.php';
+
 	include 'conn.php';
 	include 'code/clock.php';
 	include 'view/header.php';

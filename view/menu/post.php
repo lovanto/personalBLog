@@ -10,8 +10,8 @@ while ($data = mysqli_fetch_array($sql)) {
 	?>
 	<div class="container">
 		<h3 class="marginsTop"><?=$data['title_post']?><br></h3>
-		<div class="col-sm" align="center">
-			<img class="marginsBottom marginsTop justify-content-center" src="<?=$data['image_post']?>" width="800">
+		<div class="col-sm marginsBottom marginsTop" align="center">
+			<?php echo cl_image_tag($data["image_post"], array("width"=>800))?>
 		</div>
 		<p class="marginsBottom"><?=$data['content_post']?><br></p>
 		<div align="right">Diupload pada <?=$data['date_posted']?>.<br> Ditulis oleh <?=$data['writed_by']?></div>
