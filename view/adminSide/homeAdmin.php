@@ -25,14 +25,14 @@ if ($_SESSION['class'] != "Admin") {
 <body>	
 
 	<?php
+	include '../../cloudinary/vendor/autoload.php';
+	include '../../cloudinary/config.php';
+	
 	include '../../conn.php';
 	include '../../code/clock.php';
 	include 'headerAdmin.php';
 	include 'bodyAdmin.php';
 	include '../footer.php';
-	
-	include '../../cloudinary/vendor/autoload.php';
-	include '../../cloudinary/config.php';
 	?>
 	
 </body>

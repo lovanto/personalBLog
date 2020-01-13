@@ -18,15 +18,15 @@ session_start();
 </head>
 <body>
 
-	<?php 
+	<?php
+	include 'cloudinary/vendor/autoload.php';
+	include 'cloudinary/config.php';
+	 
 	include 'conn.php';
 	include 'code/clock.php';
 	include 'view/header.php';
 	include 'view/body.php';
 	include 'view/footer.php';
-	
-	include 'cloudinary/vendor/autoload.php';
-	include 'cloudinary/config.php';
 	?>
 </body>
 </html>
