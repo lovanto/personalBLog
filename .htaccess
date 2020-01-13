@@ -1,3 +1,0 @@
-RewriteEngine ON
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^home/(.*)$ src/home/$1 [QSA,L]
