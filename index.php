@@ -19,6 +19,7 @@ session_start();
 <body>
 
 	<?php
+	adwaad
 	require 'cloudinary/vendor/autoload.php';
 	require 'cloudinary/config.php';
 	require 'vendor/autoload.php';
