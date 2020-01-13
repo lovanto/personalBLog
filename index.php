@@ -19,15 +19,14 @@ session_start();
 <body>
 
 	<?php
-	require('vendor/autoload.php');
+	require ('vendor/autoload.php');
 	require 'cloudinary/vendor/autoload.php';
 	require 'cloudinary/config.php';
 
-	include 'conn.php';
-	include 'code/clock.php';
-	include 'view/header.php';
-	include 'view/body.php';
-	include 'view/footer.php';
+	require 'conn.php';
+	require 'view/header.php';
+	require 'view/body.php';
+	require 'view/footer.php';
 	?>
 </body>
 </html>
