@@ -24,6 +24,9 @@ session_start();
 	include 'view/header.php';
 	include 'view/body.php';
 	include 'view/footer.php';
+	
+	include 'cloudinary/vendor/autoload.php';
+	include 'cloudinary/config.php';
 	?>
 </body>
 </html>
