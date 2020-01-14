@@ -19,9 +19,11 @@ session_start();
 <body>
 
 	<?php 
+	// CLOUDINARY
 	require 'vendor/autoload.php';
 	require 'config.php';
 
+	// WEBSITE
 	include 'conn.php';
 	include 'view/header.php';
 	include 'view/body.php';

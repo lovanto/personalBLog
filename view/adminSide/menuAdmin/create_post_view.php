@@ -67,5 +67,5 @@
 
 <!-- Login -->
 <div id="uploadImage" class="modal-window">
-	<?php include '../../cloudinary/index.php'; ?>
+	<?php include 'uploadImage.php'; ?>
 </div>
