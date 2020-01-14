@@ -3,9 +3,32 @@ if (isset($_POST['simpan'])) {
 	$nama = $_POST['nama'];
 	$slug = $nama;
 	$gambar = $_FILES['file']['name'];
+	$fileSize = $_FILES['file']['size'];
 	$file_tmp = $_FILES['file']['tmp_name'];
 
-	\Cloudinary\Uploader::upload($file_tmp, array('public_id' => $nama, "timeout" => 120));
+	$errors = [];
+
+	if ($fileSize > 2000000) {
+		?>
+		<script>
+			alert('This file is more than 2MB. Sorry, it has to be less than or equal to 2MB');
+		</script>
+		<?php
+	}
+
+	if (empty($errors)) {
+		\Cloudinary\Uploader::upload($file_tmp, array('public_id' => $nama, "timeout" => 120));
+		?>
+		<script>
+			alert('The file <?=basename($nama)?> has been uploaded');
+		</script>
+		<?php
+		echo "";
+	}else {
+		foreach ($errors as $error) {
+			echo $error . "These are the errors" . "\n";
+		}
+	}
 }
 ?>
 
