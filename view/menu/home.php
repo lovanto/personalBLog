@@ -31,7 +31,7 @@ while ($data = mysqli_fetch_array($sql)) {
 	?>
 	<a href="index.php?page=<?=$data['title_post']?>">
 		<div class="content border zoom blackFont marginsBottom hideme">
-			<!-- <?php echo cl_image_tag($data["image_post"], array("width"=>300))?> -->
+			
 			<h4><?=$data['title_post']?>
 		</h4>
 		<div class="marginsTop">

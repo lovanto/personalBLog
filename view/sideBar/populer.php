@@ -10,7 +10,7 @@
 		?>
 		<a href="index.php?page=<?=$data['title_post']?>">
 			<div class="content border zoom blackFont marginsBottom boldFont populerFontSize center">
-				<!-- <?php echo cl_image_tag($data["image_post"], array("width"=>150))?> -->
+				
 				<div>
 					<?php
 					if (strlen($data['title_post']) > 35)  {
