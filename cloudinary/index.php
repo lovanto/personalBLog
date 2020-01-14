@@ -1,7 +1,4 @@
 <?php
-require 'vendor/autoload.php';
-require 'config.php';
-
 if (isset($_POST['simpan'])) {
 	$nama = $_POST['nama'];
 	$slug = $nama;

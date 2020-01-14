@@ -5,7 +5,7 @@
 	<div class="jumbotron p-4">
 		<div class="float-left boldText">
 			<a class="link_item nav-link minMT" href="#add_user">
-				Add New User <img class="ml-2 minMT" src="../../images/icon/plus.png" width="20">
+				Add New User <?php echo cl_image_tag('plus', array("width"=>20, "margin"=>20)) ?>
 			</a>
 		</div>
 		<form action="homeAdmin.php?" method="GET">
