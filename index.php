@@ -20,7 +20,6 @@ session_start();
 
 	<?php 
 	include 'conn.php';
-	include 'code/clock.php';
 	include 'view/header.php';
 	include 'view/body.php';
 	include 'view/footer.php';
