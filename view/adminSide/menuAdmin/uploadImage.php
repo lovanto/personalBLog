@@ -1,14 +1,11 @@
 <?php
-require '../../cloudinary/vendor/autoload.php';
-require '../../cloudinary/config.php';
-
 if (isset($_POST['simpan'])) {
 	$nama = $_POST['nama'];
 	$slug = $nama;
 	$gambar = $_FILES['file']['name'];
 	$file_tmp = $_FILES['file']['tmp_name'];
 
-	\Cloudinary\Uploader::upload($file_tmp, array('public_id' => $nama));
+	\Cloudinary\Uploader::upload($file_tmp, array('public_id' => $nama, "timeout" => 120));
 }
 ?>
 

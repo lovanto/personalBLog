@@ -25,8 +25,8 @@ if ($_SESSION['class'] != "Admin") {
 <body>	
 
 	<?php
-	include '../../cloudinary/vendor/autoload.php';
-	include '../../cloudinary/config.php';
+	include '../../vendor/autoload.php';
+	include 'menuAdmin/config.php';
 	
 	include '../../conn.php';
 	include '../../code/clock.php';
