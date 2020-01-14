@@ -1,2 +1,6 @@
 vendor/
 .env
+
+conn.php
+connLocal.php
+config.php
