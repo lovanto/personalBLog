@@ -19,8 +19,8 @@ session_start();
 <body>
 
 	<?php 
-	require 'cloudinary/vendor/autoload.php';
-	require 'cloudinary/config.php';
+	require 'vendor/autoload.php';
+	require 'config.php';
 
 	include 'conn.php';
 	include 'view/header.php';
