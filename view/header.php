@@ -6,7 +6,7 @@
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item text-center">
 				<a class="nav-link space blueImage" href="index.php">
-					
+					<?php echo cl_image_tag('icon', array("width"=>20))?>
 					</a>
 			</li>
 			<li class="nav-item text-center boldText">
