@@ -86,9 +86,13 @@
 					<td></td>
 					<td></td>
 					<td></td>
+					<td></td>
+					<td></td>
 				</tr>
 				<tr class="bg-dark">
 					<td height="40"></td>
+					<td></td>
+					<td></td>
 					<td></td>
 					<td></td>
 					<td></td>
