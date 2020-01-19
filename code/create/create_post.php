@@ -30,6 +30,8 @@ if ($_POST['submit'] == "Publikasikan") {
 		</script>
 		<?php
 	}
+}else if ($_POST['submit'] == "Simpan") {
+	if()
 }else{
 	echo "null";
 }

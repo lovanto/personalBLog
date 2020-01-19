@@ -9,7 +9,6 @@
 					case 'programming': include 'menu/programming.php'; break;
 					case 'tutorial': include 'menu/tutorial.php'; break;
 					case 'emulator': include 'menu/emulator.php'; break;
-					case 'about': include 'menu/about.php'; break;
 					case 'signup': include 'menu/signup.php'; break;
 					case 'main': 
 					default : include 'menu/home.php';
@@ -21,6 +20,7 @@
 		<div class="col-sm marginAll">
 			<?php
 			include 'sideBar/search.php';
+			include 'sideBar/about.php';
 			include 'sideBar/populer.php';
 			include 'sideBar/recommendation.php';
 			?>
