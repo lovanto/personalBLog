@@ -9,7 +9,7 @@ $show = mysqli_fetch_array($queryData);
 <div class="container">
 	<h1>Update user</h1>
 	<hr>
-	<form action="../../code/update/update_user.php" method="POST">
+	<form action="../../code/update.php?type=user" method="POST">
 		<div class="container">
 			<input type="hidden" name="id_user" value="<?=$show['id_user']?>">
 

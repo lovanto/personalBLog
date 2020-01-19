@@ -32,6 +32,10 @@ if ($_POST['submit'] == "Publikasikan") {
 	}
 }
 
+if ($_POST['submit'] == "Simpan") {
+	
+}
+
 if ($_POST['submit'] == "Tambah Data") {
 	$name_user = $_POST['name_user'];
 	$username_user = $_POST['username_user'];
