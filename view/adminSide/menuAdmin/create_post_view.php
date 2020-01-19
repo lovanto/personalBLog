@@ -72,7 +72,9 @@ if (isset($_GET['id_post']) != "") {
 			<div class="input-group marginsBottom">
 				<div class="marginsBottom">
 					<?=cl_image_tag($show['image_post'], array("width"=>260))?>
-					<a href="#imageFinder">Upload New Image</a>
+					<div class="marginsTop">
+						<a href="#imageFinder">Cari Foto</a>
+					</div>
 				</div>
 				<div class="input-group-prepend">
 					<div class="input-group-text">Foto</div>
@@ -130,6 +132,6 @@ if (isset($_GET['id_post']) != "") {
 <div id="uploadImage" class="modal-window">
 	<?php include 'uploadImage.php'; ?>
 </div>
-<div id="imageFinder" class="modal-window">
-	<?php include 'uploadImage.php'; ?>
+<div id="imageFinder" class="modal-window2">
+	<?php include 'showImage.php'; ?>
 </div>
