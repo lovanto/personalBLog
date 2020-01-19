@@ -11,14 +11,14 @@ if ($_POST['submit'] == "Publikasikan") {
 	$hit = 0;
 	$status_post = "posted";
 
-	include '../../conn.php';
+	include '../conn.php';
 	$sql = mysqli_query($Open, "INSERT INTO post (id_post, title_post, image_post, description_post, content_post, id_user, writed_by, id_category, hit, status_post) VALUES (id_post, '$title_post', '$image_post', '$description_post', '$content_post', '$id_user', '$writed_by', '$id_category', '$hit', '$status_post')");
 
 	if ($sql) {
 		?>
 		<script language="JavaScript">
 			alert('Postingan berhasil dipublikasikan.');
-			document.location='../../view/adminSide/homeAdmin.php?page=posting';
+			document.location='../view/adminSide/homeAdmin.php?page=posting';
 		</script>
 		<?php
 	}else{
@@ -26,7 +26,7 @@ if ($_POST['submit'] == "Publikasikan") {
 		?>
 		<script language="JavaScript">
 			alert('Postingan gagal dipublikasikan.');
-			document.location='../../view/adminSide/homeAdmin.php?page=posting';
+			document.location='../view/adminSide/homeAdmin.php?page=posting';
 		</script>
 		<?php
 	}
@@ -39,14 +39,14 @@ if ($_POST['submit'] == "Tambah Data") {
 	$password_user = $_POST['password_user'];
 	$class = $_POST['akses'];
 
-	require_once '../../conn.php';
+	require_once '../conn.php';
 	$sql = mysqli_query($Open, "INSERT INTO user_data (name_user, email_user, username_user, password_user, class_user) VALUES ('$name_user', '$email_user', '$username_user', '$password_user', '$class')");
 
 	if ($sql) {
 		?>
 		<script language="JavaScript">
 			alert('Akun berhasil dibuat.');
-			document.location='../../view/adminSide/homeAdmin.php?page=users';
+			document.location='../view/adminSide/homeAdmin.php?page=users';
 		</script>
 		<?php
 	}else{
@@ -54,7 +54,7 @@ if ($_POST['submit'] == "Tambah Data") {
 		?>
 		<script language="JavaScript">
 			alert('Akun gagal dibuat.');
-			document.location='../../view/adminSide/homeAdmin.php?page=users';
+			document.location='../view/adminSide/homeAdmin.php?page=users';
 		</script>
 		<?php
 	}

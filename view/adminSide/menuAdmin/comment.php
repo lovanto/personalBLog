@@ -66,7 +66,7 @@
 						<td><?=$show['name_user']?></td>
 						<td><?=$show['comment_content']?></td>
 						<td><?=$show['date_comment']?></td>
-						<td><a href="../../code/delete/delete_comment.php?id_comment=<?php echo $show['id_comment'];?>">Hapus</a></td>
+						<td><a href="../../code/delete.php?type=comment&id_comment=<?php echo $show['id_comment'];?>">Hapus</a></td>
 					</tr>
 					<?php
 				}
