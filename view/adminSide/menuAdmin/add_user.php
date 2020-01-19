@@ -2,7 +2,7 @@
 	<a href="#" title="Close" class="modal-close2"><font size="5">&times;</font></a>
 	<h1>Create new user</h1>
 	<hr>
-	<form action="../../code/create/create_user.php" method="POST">
+	<form action="../../code/create.php" method="POST">
 		<div class="container">
 			<div class="input-group marginsBottom col-md-6">
 				<div class="input-group-prepend">
@@ -95,6 +95,8 @@
 				$("#validate-status_username").text("").css('color', 'red'); 
 
 				if (username_user!='') {
+					$("#validate-status_username").text("Loading...").css('color', 'red');
+					document.getElementById("submit").classList.add('disabled'); 
 					$.post('../../code/check_user_exist.php', {username:username_user},
 
 						function(data) {

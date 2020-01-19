@@ -6,7 +6,7 @@
 <h1>Create new post</h1>
 <a href="#uploadImage">Upload New Image</a>
 <hr>
-<form action="../../code/create/create_post.php" method="POST">
+<form action="../../code/create.php" method="POST">
 	<input class="form-control" type="hidden" name="id_user" id="id_user" value="<?=$_SESSION['id_user'];?>">
 	<input class="form-control" type="hidden" name="name" id="name" value="<?=$_SESSION['name'];?>">
 	<div class="row">
