@@ -12,11 +12,7 @@
 				<?php echo cl_image_tag($data["image_post"], array("width"=>150))?>
 				<div>
 					<?php
-					if (strlen($data['title_post']) > 35)  {
-						echo substr($data['title_post'],0,35)."&nbsp...";
-					}else{
 						echo $data['title_post'];
-					}
 					?>
 				</div>
 			</div>
