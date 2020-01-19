@@ -57,7 +57,11 @@ if (isset($_GET['id_post']) != "") {
 				</div>
 			</main>
 		</div>
+
 		<div class="col-md-3 border-left">
+			<div class="boldFont">Thumbnail</div>
+			<hr>
+
 			<div class="input-group marginsBottom">
 				<div class="input-group-prepend">
 					<div class="input-group-text">Judul</div>
@@ -65,9 +69,15 @@ if (isset($_GET['id_post']) != "") {
 				<input class="form-control" type="text" name="title_post" id="title_post" value="<?=$show['title_post']?>" maxlength="70">
 			</div>
 
-			<div class="custom-file marginsBottom">
-				<label class="custom-file-label" id="label-image" for="image_post">Pilih foto</label>
-				<input type="file" class="custom-file-input" id="image_post" name="image_post">
+			<div class="input-group marginsBottom">
+				<div class="marginsBottom">
+					<?=cl_image_tag($show['image_post'], array("width"=>260))?>
+					<a href="#imageFinder">Upload New Image</a>
+				</div>
+				<div class="input-group-prepend">
+					<div class="input-group-text">Foto</div>
+				</div>
+				<input class="form-control" type="text" name="image_post" id="image_post" value="<?=$show['image_post']?>" maxlength="70">
 			</div>
 
 			<div class="marginsBottom">
@@ -118,5 +128,8 @@ if (isset($_GET['id_post']) != "") {
 
 <!-- Login -->
 <div id="uploadImage" class="modal-window">
+	<?php include 'uploadImage.php'; ?>
+</div>
+<div id="imageFinder" class="modal-window">
 	<?php include 'uploadImage.php'; ?>
 </div>
