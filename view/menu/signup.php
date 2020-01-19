@@ -83,6 +83,8 @@
 			$("#validate-status_username").text("").css('color', 'red'); 
 
 			if (username_user!='') {
+				$("#validate-status_username").text("Loading...").css('color', 'red');
+					document.getElementById("submit").classList.add('disabled'); 
 				$.post('code/check_user_exist.php', {username:username_user},
 
 					function(data) {
