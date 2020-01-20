@@ -1,3 +1,17 @@
+<?php
+$sqlUser = "SELECT * FROM user_data";
+$sqlPost = "SELECT * FROM post";
+$sqlComment = "SELECT * FROM comment_user";
+
+$resultUser = mysqli_query($Open, $sqlUser);
+$resultPost = mysqli_query($Open, $sqlPost);
+$resultComment = mysqli_query($Open, $sqlComment);
+
+$countUser = mysqli_num_rows($resultUser);
+$countPost = mysqli_num_rows($resultPost);
+$countComment = mysqli_num_rows($resultComment);
+?>
+
 <div class="jumbotron p-3 boldText mb-3">
 	<?php echo cl_image_tag('home', array("width"=>20))?> Dashboard
 </div>
