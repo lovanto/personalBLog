@@ -70,7 +70,19 @@
 						<td><?=$numberRow?></td>
 						<td><?=$show['title_post']?></td>
 						<td><?=$show['description_post']?></td>
-						<td><?=$show['id_category']?></td>
+						<td>
+							<?php 
+							if ($show['id_category']==1) {
+								echo "Programming";
+							}elseif ($show['id_category']==2) {
+								echo "Tutorial";
+							}elseif ($show['id_category']==3) {
+								echo "Emulator";
+							}else{
+								echo "Lainnya";
+							}
+							?>
+						</td>
 						<td><?=$show['hit']?></td>
 						<td><?=$show['status_post']?></td>
 						<td><a href="homeAdmin.php?page=create_posting&id_post=<?php echo $show['id_post'];?>">Edit</a> | <a href="../../code/delete.php?type=post&id_post=<?php echo $show['id_post'];?>">Hapus</a></td>

@@ -108,7 +108,12 @@ if ($_POST['submit'] == "Simpan" || "Perbarui") {
 			<?php
 		}
 	}else{
-
+		?>
+		<script language="JavaScript">
+			alert('Error !!!');
+			document.location='../view/adminSide/homeAdmin.php?page=posting';
+		</script>
+		<?php
 	}
 }
 
