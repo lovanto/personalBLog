@@ -41,6 +41,7 @@ if (isset($_GET['id_post']) != "") {
 	<input type="hidden" name="id_user" id="id_user" value="<?=$_SESSION['id_user'];?>">
 	<input type="hidden" name="writed_by" id="writed_by" value="<?=$_SESSION['name'];?>">
 	<input type="hidden" name="date_posted" id="date_posted" value="<?=$_SESSION['date_posted'];?>">
+	<input type="hidden" name="id_post" id="id_post" value="<?=$show['id_post'];?>">
 	<input type="hidden" name="hit" id="hit" value="<?=$show['hit'];?>">
 	<input type="hidden" name="status_post" id="status_post" value="<?=$show['status_post'];?>">
 	<div class="row">
@@ -118,7 +119,15 @@ if (isset($_GET['id_post']) != "") {
 
 			<div class="row container marginsBottom">
 				<input class="btn btn-primary mr-2 col-sm" type="submit" name="submit" value="Publikasikan">
-				<input class="btn btn-default border col-sm" type="submit" name="submit" value="Simpan">
+				<input class="btn btn-default border col-sm" type="submit" name="submit" value=
+				<?php
+				if (isset($_GET['id_post'])) {
+					echo '"Perbarui"';
+				}else{
+					echo '"Simpan"';
+				}
+				?>
+				>
 			</div>
 		</div>
 	</div>
