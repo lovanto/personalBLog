@@ -118,7 +118,15 @@ if (isset($_GET['id_post']) != "") {
 			</div>
 
 			<div class="row container marginsBottom">
-				<input class="btn btn-primary mr-2 col-sm" type="submit" name="submit" value="Publikasikan">
+				<input class="btn btn-primary mr-2 col-sm" type="submit" name="submit" value="Publikasikan"
+				<?php
+				if (isset($_GET['id_post'])) {
+					echo 'disabled';
+				}else{
+					echo 'disabled';
+				}
+				?>
+				>
 				<input class="btn btn-default border col-sm" type="submit" name="submit" value=
 				<?php
 				if (isset($_GET['id_post'])) {
