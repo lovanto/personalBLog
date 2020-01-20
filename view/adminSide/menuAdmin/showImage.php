@@ -8,10 +8,10 @@
 
 		while ($showData = mysqli_fetch_array($query)) {
 			?>
-			<div class="example col-md-3 zoom">
+			<div class="imageBoxed col-md-3 zoom">
 				<?=cl_image_tag($showData['data_image'], array("width"=>161))?>
-				<div class="fadedbox">
-					<div class="title text"> House </div>
+				<div class="fadedBoxed">
+					<div class="title text"><?=$showData['data_image']?></div>
 				</div>
 			</div>
 			<?php
