@@ -35,13 +35,14 @@ if ($_POST['submit'] == "Publikasikan") {
 if ($_POST['submit'] == "Simpan" || "Perbarui") {
 	$id_post_get = $_POST['id_post'];
 	if (!empty($id_post_get)) {
+		include '../conn.php';
 		$id_post = $id_post_get;
 		$title_post = $_POST['title_post'];
 		$image_post = $_POST['image_post'];
 		$description_post = $_POST['description_post'];
 		$content_post = $_POST['editor'];
 		$id_user = $_POST['id_user'];
-		$writed_by = $_POST['name'];
+		$writed_by = $_POST['writed_by'];
 		$id_category = $_POST['id_category'];
 		$hit = $_POST['hit'];
 		$status_post = "posted";
@@ -49,7 +50,7 @@ if ($_POST['submit'] == "Simpan" || "Perbarui") {
 		$sql = mysqli_query($Open,"UPDATE post SET title_post='$title_post', 
 			image_post='$image_post', 
 			description_post='$description_post',
-			editor='$editor',
+			content_post='$content_post',
 			id_user='$id_user',
 			writed_by='$writed_by',
 			id_category='$id_category',
