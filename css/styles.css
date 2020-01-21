@@ -227,7 +227,6 @@ a:hover{
   opacity: 0;
   width: 161px;
   height: 91px;
-  margin-left: 40px;
   padding-top: 33px;
 }
 .imageBoxed:hover .fadedBoxed { opacity: 0.8; }
