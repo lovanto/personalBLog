@@ -1,6 +1,17 @@
 <?php
 include '../../conn.php';
-if (isset($_GET['id_post']) != "") {
+if (isset($_GET['id_post']) == "") {
+	$title_post = "";
+	$image_post = "";
+	$description_post = "";
+	$content_post = "";
+	$id_user = "";
+	$writed_by = "";
+	$date_posted = "";
+	$id_category = "";
+	$hit = "";
+	$status_post = "";
+}else{
 	$id_post = $_GET['id_post'];
 	$getData = "SELECT * FROM post WHERE id_post = '$id_post'";
 	$queryData = mysqli_query($Open, $getData);
@@ -15,17 +26,6 @@ if (isset($_GET['id_post']) != "") {
 	$id_category = $show['id_category'];
 	$hit = $show['hit'];
 	$status_post = $show['status_post'];
-}else{
-	$title_post = "";
-	$image_post = "";
-	$description_post = "";
-	$content_post = "";
-	$id_user = "";
-	$writed_by = "";
-	$date_posted = "";
-	$id_category = "";
-	$hit = "";
-	$status_post = "";
 }
 ?>
 
@@ -41,9 +41,9 @@ if (isset($_GET['id_post']) != "") {
 	<input type="hidden" name="id_user" id="id_user" value="<?=$_SESSION['id_user'];?>">
 	<input type="hidden" name="writed_by" id="writed_by" value="<?=$_SESSION['name'];?>">
 	<input type="hidden" name="date_posted" id="date_posted" value="<?=$_SESSION['date_posted'];?>">
-	<input type="hidden" name="id_post" id="id_post" value="<?=$show['id_post'];?>">
-	<input type="hidden" name="hit" id="hit" value="<?=$show['hit'];?>">
-	<input type="hidden" name="status_post" id="status_post" value="<?=$show['status_post'];?>">
+	<input type="hidden" name="id_post" id="id_post" value="<?=$id_post?>">
+	<input type="hidden" name="hit" id="hit" value="<?=$hit?>">
+	<input type="hidden" name="status_post" id="status_post" value="<?=$status_post?>">
 	<div class="row">
 		<div class="col-sm minML-2 minMR-2">
 			<main>
@@ -51,7 +51,7 @@ if (isset($_GET['id_post']) != "") {
 					<div class="grid-container">
 						<div class="grid-width-100">
 							<textarea id="editor" name="editor">
-								<?=$show['content_post']?>
+								<?=$content_post?>
 							</textarea>
 						</div>
 					</div>
@@ -67,12 +67,18 @@ if (isset($_GET['id_post']) != "") {
 				<div class="input-group-prepend">
 					<div class="input-group-text">Judul</div>
 				</div>
-				<input class="form-control" type="text" name="title_post" id="title_post" value="<?=$show['title_post']?>" maxlength="70">
+				<input class="form-control" type="text" name="title_post" id="title_post" value="<?=$title_post?>" maxlength="70">
 			</div>
 
 			<div class="input-group marginsBottom">
 				<div class="marginsBottom">
-					<?=cl_image_tag($show['image_post'], array("width"=>260))?>
+					<?php
+					if ($image_post != "") {
+						echo cl_image_tag($image_post, array("width"=>260));
+					}else{
+						echo cl_image_tag("", array("width"=>260));
+					}
+					?>
 					<div class="marginsTop">
 						<a href="#imageFinder">Cari Foto</a>
 					</div>
@@ -80,12 +86,12 @@ if (isset($_GET['id_post']) != "") {
 				<div class="input-group-prepend">
 					<div class="input-group-text">Foto</div>
 				</div>
-				<input class="form-control" type="text" name="image_post" id="image_post" value="<?=$show['image_post']?>" maxlength="70">
+				<input class="form-control" type="text" name="image_post" id="image_post" value="<?=$image_post?>" maxlength="70">
 			</div>
 
 			<div class="marginsBottom">
 				<div class="input-group-text mb-1">Deskripsi Postingan</div>
-				<textarea class="form-control textUnResize" name="description_post" id="description_post" maxlength="245" rows="3"><?=$show['description_post']?></textarea>
+				<textarea class="form-control textUnResize" name="description_post" id="description_post" maxlength="245" rows="3"><?=$description_post?></textarea>
 			</div>
 
 			<div class="input-group marginsBottom">
@@ -95,21 +101,21 @@ if (isset($_GET['id_post']) != "") {
 				<select class="form-control" name="id_category" id="id_category">
 					<option value="1"
 					<?php
-					if ($show['id_category'] == "1") {
+					if ($id_category == "1") {
 						echo "selected";
 					}
 					?>
 					>Programming</option>
 					<option value="2"
 					<?php
-					if ($show['id_category'] == "2") {
+					if ($id_category == "2") {
 						echo "selected";
 					}
 					?>
 					>Tutorial</option>
 					<option value="3"
 					<?php
-					if ($show['id_category'] == "3") {
+					if ($id_category == "3") {
 						echo "selected";
 					}
 					?>
