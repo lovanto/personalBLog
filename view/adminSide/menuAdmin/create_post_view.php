@@ -71,7 +71,7 @@ if (isset($_GET['id_post']) == "") {
 			</div>
 
 			<div class="input-group marginsBottom">
-				<div class="marginsBottom">
+				<div class="marginsBottom" id="show_image_post">
 					<?php
 					if ($image_post != "") {
 						echo cl_image_tag($image_post, array("width"=>260));
@@ -147,10 +147,6 @@ if (isset($_GET['id_post']) == "") {
 	</div>
 </form>
 
-<script>
-	initSample();
-</script>
-
 <!-- Login -->
 <div id="uploadImage" class="modal-window">
 	<?php include 'uploadImage.php'; ?>
@@ -158,3 +154,13 @@ if (isset($_GET['id_post']) == "") {
 <div id="imageFinder" class="modal-window2">
 	<?php include 'showImage.php'; ?>
 </div>
+
+<script>
+	$(document).ready(function() {
+		$("#image_post").keyup(changeImage);
+	});
+
+	function changeImage() {
+		var username_user = $("#image_post").val();
+	}
+</script>

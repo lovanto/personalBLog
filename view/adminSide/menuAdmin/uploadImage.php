@@ -18,6 +18,13 @@ if (isset($_POST['simpan'])) {
 
 	if (empty($errors)) {
 		\Cloudinary\Uploader::upload($file_tmp, array('public_id' => $nama, "timeout" => 120));
+		$data_image = $_POST['nama'];
+
+		$sql = "INSERT INTO image (id_image, data_image) VALUES (id_image, '$data_image'";
+		$query = mysqli_query($Open, $sql);
+		if ($query) {
+			
+		}
 		?>
 		<script>
 			alert('The file <?=basename($nama)?> has been uploaded');
