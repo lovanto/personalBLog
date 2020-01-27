@@ -156,6 +156,8 @@ if (isset($_GET['id_post']) == "") {
 </div>
 
 <script>
+	initSample();
+	
 	$(document).ready(function() {
 		$("#image_post").keyup(changeImage);
 	});
