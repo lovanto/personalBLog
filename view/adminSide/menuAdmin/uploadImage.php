@@ -14,26 +14,28 @@ if (isset($_POST['simpan'])) {
 			alert('This file is more than 2MB. Sorry, it has to be less than or equal to 2MB');
 		</script>
 		<?php
-	}
+	}else{
+		if (empty($errors)) {
+			\Cloudinary\Uploader::upload($file_tmp, array('public_id' => $nama, "timeout" => 120));
+			$data_image = $_POST['nama'];
 
-	if (empty($errors)) {
-		\Cloudinary\Uploader::upload($file_tmp, array('public_id' => $nama, "timeout" => 120));
-		$data_image = $_POST['nama'];
+			$sql = "INSERT INTO image(data_image) VALUES ('$nama')";
+			$query = mysqli_query($Open, $sql);
+			if ($query) {
 
-		$sql = "INSERT INTO image (id_image, data_image) VALUES (id_image, '$data_image'";
-		$query = mysqli_query($Open, $sql);
-		if ($query) {
-			
-		}
-		?>
-		<script>
-			alert('The file <?=basename($nama)?> has been uploaded');
-		</script>
-		<?php
-		echo "";
-	}else {
-		foreach ($errors as $error) {
-			echo $error . "These are the errors" . "\n";
+			}else{
+				echo "adwda";
+			}
+			?>
+			<script>
+				alert('The file <?=basename($nama)?> has been uploaded');
+			</script>
+			<?php
+			echo "";
+		}else {
+			foreach ($errors as $error) {
+				echo $error . "These are the errors" . "\n";
+			}
 		}
 	}
 }
