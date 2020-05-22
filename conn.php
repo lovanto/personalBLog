@@ -1,5 +1,5 @@
 <?php 
-$Open = mysqli_connect("remotemysql.com","DYjVJCieKj","XQ8FjaN4id","DYjVJCieKj");
+$Open = mysqli_connect("localhost","root","","personalblog");
 if (mysqli_connect_errno()){
 	echo "Koneksi database gagal : " . mysqli_connect_error();
 }

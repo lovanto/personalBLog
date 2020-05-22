@@ -4,7 +4,9 @@ This personal blog have three access type anonim, user, and admin.
 
 Open the demo [here](https://lovanto.herokuapp.com/)
 
-Just copy or clone this repository the open it in your local. Make sure u have internet connection, cause this blog use online database.
+Just copy or clone this repository the open it in your local. 
+
+Make sure u have internet connection, cause this blog use online database.
 
 # Access
 1. Anonim
